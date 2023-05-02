@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.spring_security_project.model.Provincia;
+import com.spring_security_project.read_CSV.CSVHelper;
 import com.spring_security_project.repository.ProvinciaRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -12,7 +13,8 @@ import jakarta.persistence.EntityNotFoundException;
 @Service
 public class ProvinciaService {
 
-	@Autowired ProvinciaRepository repo;
+	@Autowired 
+	ProvinciaRepository repo;
 
 	public List<Provincia> findAll(){
 		return (List<Provincia>) repo.findAll();
@@ -30,6 +32,11 @@ public class ProvinciaService {
 		repo.save(provincia);
 		return "Provincia aggiunta";
 	}
+	public void saveCSV() {
+		   List<Provincia> province = CSVHelper.csvToProvincia();
+		    System.out.println(province);
+		      repo.saveAll(province);
+	}
 	
 	public Provincia editProvincia(Provincia provincia) {
 		if(!repo.existsById(provincia.getId())) {
@@ -44,5 +51,7 @@ public class ProvinciaService {
 		repo.deleteById(id);
 		return "provincia eliminata";
 	}
+	
+	
 	
 }

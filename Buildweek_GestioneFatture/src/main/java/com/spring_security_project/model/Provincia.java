@@ -27,6 +27,7 @@ import lombok.NoArgsConstructor;
 public class Provincia {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(nullable = false, unique = true)
 	private String sigla;
@@ -37,5 +38,11 @@ public class Provincia {
 	@OneToMany(mappedBy = "codice_provincia")
 	@JsonIgnoreProperties
 	private List<Comune> listaComuni;
+	public Provincia(String sigla, String provincia, String regione) {
+		super();
+		this.sigla = sigla;
+		this.provincia = provincia;
+		this.regione = regione;
+	}
 	
 }
