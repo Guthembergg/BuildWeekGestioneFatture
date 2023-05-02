@@ -3,6 +3,7 @@ package com.spring_security_project.configuration;
 import java.time.LocalDate;
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -16,6 +17,8 @@ import com.spring_security_project.model.TipoCliente;
 @Configuration
 @PropertySource("classpath:application.properties")
 public class ClienteConfiguration {
+	
+	@Autowired IndirizzoConfiguration indirizzo;
 
 	@Bean
 	@Scope("prototype")
@@ -43,6 +46,8 @@ public class ClienteConfiguration {
 		u.setPec(fake.internet().safeEmailAddress());
 		u.setTelefono(fake.phoneNumber().cellPhone());
 		u.setTelefonoContatto(fake.phoneNumber().cellPhone());
+		u.setSedeLegale(indirizzo.creaIndirizzoFake());
+		u.setSedeOperativa(u.getSedeLegale());
 
 		return u;
 	}
