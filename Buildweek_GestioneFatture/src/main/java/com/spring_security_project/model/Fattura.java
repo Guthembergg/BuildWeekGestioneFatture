@@ -2,6 +2,7 @@ package com.spring_security_project.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,9 +32,9 @@ public class Fattura {
 	@Column(nullable = false)
 	private Integer anno; 
 	@Column(nullable = false)
-	private LocalDate data;
+	private Date data;
 	@Column(nullable = false)
-	private BigDecimal importo; 
+	private Double importo; 
 	@Column(nullable = false, unique = true)
 	private Integer numero; 
 	@Enumerated(EnumType.STRING)

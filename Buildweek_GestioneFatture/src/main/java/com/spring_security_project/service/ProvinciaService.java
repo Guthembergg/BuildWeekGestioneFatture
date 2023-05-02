@@ -4,10 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.Provincia;
-import com.spring_security_project.repository.FatturaRepository;
 import com.spring_security_project.repository.ProvinciaRepository;
 
 import jakarta.persistence.EntityNotFoundException;

@@ -63,5 +63,7 @@ public class Cliente {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
 	@JsonIgnoreProperties
 	private List<Fattura> listaFatture;
+	
+	
 
 }

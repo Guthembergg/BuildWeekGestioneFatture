@@ -4,11 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.spring_security_project.model.Comune;
-import com.spring_security_project.model.Provincia;
 import com.spring_security_project.repository.ComuneRepository;
-import com.spring_security_project.repository.ProvinciaRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 
