@@ -3,6 +3,7 @@ package com.spring_security_project.configuration;
 import java.time.LocalDate;
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -17,6 +18,9 @@ import com.spring_security_project.model.TipoCliente;
 @PropertySource("classpath:application.properties")
 public class ClienteConfiguration {
 
+	@Autowired
+	IndirizzoConfiguration indirizzo;
+
 	@Bean
 	@Scope("prototype")
 	public Cliente creaCliente() {
@@ -25,7 +29,7 @@ public class ClienteConfiguration {
 
 	}
 
-	@Bean("FakeCliente")
+	@Bean("clienteFake")
 	@Scope("prototype")
 	public Cliente fakeCliente() {
 		Cliente u = new Cliente();
@@ -43,14 +47,18 @@ public class ClienteConfiguration {
 		u.setPec(fake.internet().safeEmailAddress());
 		u.setTelefono(fake.phoneNumber().cellPhone());
 		u.setTelefonoContatto(fake.phoneNumber().cellPhone());
+		u.setSedeLegale(indirizzo.creaIndirizzoFake());
+		u.setSedeOperativa(u.getSedeLegale());
 
 		return u;
 	}
 
-	@Bean("CustomCliente")
+	@Bean("clienteCustom")
 	@Scope("prototype")
 	public Cliente customCliente(String ragioneSociale, String partitaIva, String email, LocalDate dataInserimento,
-			LocalDate dataUltimoContatto, Integer fatturatoAnnuale, String pec, String telefono, String emailContatto, String nomeContatto, String cognomeContatto, String telefonoContatto, TipoCliente tipoCliente, Indirizzo sedeLegale) {
+			LocalDate dataUltimoContatto, Integer fatturatoAnnuale, String pec, String telefono, String emailContatto,
+			String nomeContatto, String cognomeContatto, String telefonoContatto, TipoCliente tipoCliente,
+			Indirizzo sedeLegale) {
 		Cliente u = new Cliente();
 		u.setNomeContatto(nomeContatto);
 		u.setCognomeContatto(cognomeContatto);

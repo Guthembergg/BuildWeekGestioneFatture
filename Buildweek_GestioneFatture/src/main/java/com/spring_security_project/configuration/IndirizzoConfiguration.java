@@ -20,7 +20,7 @@ public class IndirizzoConfiguration {
 		return new Indirizzo();
 	}
 
-	@Bean("fakeIndirizzo")
+	@Bean("indirizzoFake")
 	@Scope("prototype")
 	public Indirizzo creaIndirizzoFake() {
 		Faker fake = new Faker(new Locale("it-IT"));
@@ -29,7 +29,7 @@ public class IndirizzoConfiguration {
 				.localita(fake.address().country()).cap(fake.number().numberBetween(10000, 99999)).build();
 	}
 
-	@Bean("customIndirizzo")
+	@Bean("indirizzoCustom")
 	@Scope("prototype")
 	public Indirizzo creaIndirizzoCustom(String via, Integer civico, String localita, Integer cap, Comune comune) {
 		Indirizzo indirizzo = new Indirizzo();
