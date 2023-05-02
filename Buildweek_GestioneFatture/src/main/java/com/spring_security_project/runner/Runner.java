@@ -51,7 +51,7 @@ public class Runner implements ApplicationRunner {
 		
 		Cliente cl2 = clienteCustom.getObject("MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, i);
 		System.out.println(cl2);
-	
+		provinciaServ.saveCSV();
 				
 	}
 

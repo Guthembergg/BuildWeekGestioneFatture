@@ -29,7 +29,7 @@ public class CSVRunner implements CommandLineRunner {
 
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		c.saveCSV();
+	
 	}
 
 

@@ -27,7 +27,6 @@ import lombok.NoArgsConstructor;
 public class Provincia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(nullable = false, unique = true)
 	private String sigla;
@@ -40,6 +39,13 @@ public class Provincia {
 	private List<Comune> listaComuni;
 	public Provincia(String sigla, String provincia, String regione) {
 		super();
+		this.sigla = sigla;
+		this.provincia = provincia;
+		this.regione = regione;
+	}
+	public Provincia(Long id, String sigla, String provincia, String regione) {
+		super();
+		this.id = id;
 		this.sigla = sigla;
 		this.provincia = provincia;
 		this.regione = regione;

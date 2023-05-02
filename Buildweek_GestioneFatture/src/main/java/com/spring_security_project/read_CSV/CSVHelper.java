@@ -20,7 +20,7 @@ public class CSVHelper {
 	
 
 		  public static String TYPE = "text/csv";
-		  static String[] HEADERs = { "Sigla", "Provincia", "Regione"};
+		  static String[] HEADERs = { "id","Sigla", "Provincia", "Regione"};
 
 		  public static boolean hasCSVFormat(MultipartFile file) {
 
@@ -32,10 +32,10 @@ public class CSVHelper {
 		  }
 		    public static List<Provincia> csvToProvincia() {//InputStream is
 		        try //(BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-		         (BufferedReader fileReader = new BufferedReader(new  FileReader("province-italiane.csv"));
+		         (BufferedReader fileReader = new BufferedReader(new  FileReader("province-italiane-id2.csv"));
 
 		            CSVParser csvParser = new CSVParser(fileReader,
-		                CSVFormat.newFormat(';').withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
+		                CSVFormat.newFormat(';').withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim().withAllowMissingColumnNames());) {
 
 		          List<Provincia> tutorials = new ArrayList<Provincia>();
 
@@ -43,9 +43,10 @@ public class CSVHelper {
 
 		          for (CSVRecord csvRecord : csvRecords) {
 		        	  Provincia tutorial = new Provincia(
-		                 csvRecord.get(0),
-		                  csvRecord.get(1),
-		                  csvRecord.get(2)
+		        			  Long.parseLong(csvRecord.get(0)),
+		                 csvRecord.get(1),
+		                  csvRecord.get(2),
+		                  csvRecord.get(3)
 		            
 		                );
 
