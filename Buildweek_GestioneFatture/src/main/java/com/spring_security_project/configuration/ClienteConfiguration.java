@@ -17,8 +17,9 @@ import com.spring_security_project.model.TipoCliente;
 @Configuration
 @PropertySource("classpath:application.properties")
 public class ClienteConfiguration {
-	
-	@Autowired IndirizzoConfiguration indirizzo;
+
+	@Autowired
+	IndirizzoConfiguration indirizzo;
 
 	@Bean
 	@Scope("prototype")
@@ -28,7 +29,7 @@ public class ClienteConfiguration {
 
 	}
 
-	@Bean("FakeCliente")
+	@Bean("clienteFake")
 	@Scope("prototype")
 	public Cliente fakeCliente() {
 		Cliente u = new Cliente();
@@ -52,10 +53,12 @@ public class ClienteConfiguration {
 		return u;
 	}
 
-	@Bean("CustomCliente")
+	@Bean("clienteCustom")
 	@Scope("prototype")
 	public Cliente customCliente(String ragioneSociale, String partitaIva, String email, LocalDate dataInserimento,
-			LocalDate dataUltimoContatto, Integer fatturatoAnnuale, String pec, String telefono, String emailContatto, String nomeContatto, String cognomeContatto, String telefonoContatto, TipoCliente tipoCliente, Indirizzo sedeLegale) {
+			LocalDate dataUltimoContatto, Integer fatturatoAnnuale, String pec, String telefono, String emailContatto,
+			String nomeContatto, String cognomeContatto, String telefonoContatto, TipoCliente tipoCliente,
+			Indirizzo sedeLegale) {
 		Cliente u = new Cliente();
 		u.setNomeContatto(nomeContatto);
 		u.setCognomeContatto(cognomeContatto);

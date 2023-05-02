@@ -1,5 +1,6 @@
 package com.spring_security_project.configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,6 +32,7 @@ public class ProvinciaConfiguration {
 		prov.setSigla(fake.address().cityPrefix());
 		prov.setProvincia(fake.address().city());
 		prov.setRegione(fake.address().country());
+		prov.setListaComuni(new ArrayList<Comune>());
 		for(int i = 0; i < 5; i++) {
 			prov.getListaComuni().add(comune.creaComuneFake());
 		}

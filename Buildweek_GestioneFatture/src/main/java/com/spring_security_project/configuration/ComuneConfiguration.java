@@ -1,5 +1,6 @@
 package com.spring_security_project.configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -30,6 +31,7 @@ public class ComuneConfiguration {
 		Comune comune = new Comune();
 		 comune.setDenominazione(fake.address().cityName());
 		 comune.setNome_provincia(fake.address().city());
+		 comune.setListaIndirizzi(new ArrayList<Indirizzo>());
 		 for(int i = 0; i < 5; i++) {			 
 			 comune.getListaIndirizzi().add(indirizzo.creaIndirizzoFake());
 		 }
