@@ -36,23 +36,53 @@ public class Runner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
+		// METODI COMUNE
+		// problema: id provincia non assegnato
+		// problema: id da assegnare manualmente(per import excel)
+		Provincia p = provincia.getObject();
+		p.setId(1l);
 		Comune com = comune.getObject();
+		com.setProgressivoComune(1l);
+		com.setCodice_provincia(p);
+		comuneServ.addComune(com);
 		//System.out.println(com);
 		
-		Provincia p = provincia.getObject();
+		// METODI PROVINCIA
+		// problema: id da assegnare manualmente(per import excel)
 		p.getListaComuni().add(com);
+		//p.setId(2l);
 		System.out.println(p.getListaComuni().size());
+	//	provinciaServ.addProvincia(p);
+	//	Provincia pLetto = provinciaServ.findById(2l);
+	//	System.out.println(pLetto);
+//		provinciaServ.deleteProvinciaById(3l);
 		
+		// METODI INDIRIZZO
+		// problema creazione fake di comuni dentro indirizzi e viceversa
+		// creano un circolo errato
 		Indirizzo i = indirizzo.getObject();
 		//System.err.println(i);
+		//indirizzoServ.addIndirizzo(i);
+//		Indirizzo iLetto = indirizzoServ.findById(6l);
+//		System.out.println(iLetto);
+	//	indirizzoServ.deleteIndirizzoById(6l);
 		
+		// METODI CLIENTE
 		Cliente cl = cliente.getObject();
 //		System.out.println(cl);
 		
 		Cliente cl2 = clienteCustom.getObject("MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, i);
 		System.out.println(cl2);
-		provinciaServ.saveCSV();
+		
+//		clienteServ.addCliente(cl);
+//		clienteServ.deleteClienteById(4l);
+		Cliente clLetto = clienteServ.findById(1l);
+		System.out.println(clLetto);
 				
+		// ALTRO
+		//1) Aggiungere messaggi di conferma di operazione
+		//avvenuta
+	
 	}
 
 }

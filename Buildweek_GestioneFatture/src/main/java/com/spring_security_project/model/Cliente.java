@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -56,7 +57,7 @@ public class Cliente {
 	private String telefonoContatto;
 	@Enumerated(EnumType.STRING)
 	private TipoCliente tipoCliente;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Indirizzo sedeLegale;
 	@OneToOne
 	private Indirizzo sedeOperativa;
