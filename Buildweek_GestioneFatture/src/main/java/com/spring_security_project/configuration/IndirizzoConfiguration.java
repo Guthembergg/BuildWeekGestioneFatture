@@ -14,6 +14,7 @@ import com.spring_security_project.model.Indirizzo;
 @Configuration
 public class IndirizzoConfiguration {
 
+	
 	@Bean
 	@Scope("prototype")
 	public Indirizzo creaIndirizzo() {
