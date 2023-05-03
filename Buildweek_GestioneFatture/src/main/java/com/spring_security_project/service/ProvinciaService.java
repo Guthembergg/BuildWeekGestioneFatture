@@ -59,7 +59,7 @@ public class ProvinciaService {
 			throw new EntityNotFoundException("Nessuna provincia");
 		}
         
-		return repo.findAll(pageable);
+		else return repo.findAll(pageable);
     }
 	
 	
