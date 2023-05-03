@@ -34,7 +34,7 @@ public class ProvinciaService {
 	}
 	public void saveCSV() {
 		   List<Provincia> province = CSVHelper.csvToProvincia();
-		    System.out.println(province);
+		    //System.out.println(province);
 		      repo.saveAll(province);
 	}
 	
