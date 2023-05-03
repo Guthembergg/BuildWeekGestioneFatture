@@ -3,6 +3,8 @@ package com.spring_security_project.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.spring_security_project.model.Provincia;
 import com.spring_security_project.read_CSV.CSVHelper;
@@ -51,6 +53,14 @@ public class ProvinciaService {
 		repo.deleteById(id);
 		return "provincia eliminata";
 	}
+	
+	public Page<Provincia> getAllProvinciaPageable(Pageable pageable) {
+		if(repo.findAll(pageable).isEmpty()) {
+			throw new EntityNotFoundException("Nessuna provincia");
+		}
+        
+		return repo.findAll(pageable);
+    }
 	
 	
 	
