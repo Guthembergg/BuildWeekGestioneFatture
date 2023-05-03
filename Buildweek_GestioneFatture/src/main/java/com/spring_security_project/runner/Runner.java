@@ -39,21 +39,22 @@ public class Runner implements ApplicationRunner {
 		// METODI COMUNE
 		// problema: id provincia non assegnato
 		// problema: id da assegnare manualmente(per import excel)
+		Provincia p = provincia.getObject();
+		p.setId(1l);
 		Comune com = comune.getObject();
 		com.setProgressivoComune(1l);
+		com.setCodice_provincia(p);
 		comuneServ.addComune(com);
 		//System.out.println(com);
 		
 		// METODI PROVINCIA
-		// problema: non aggiorna lista comuni
 		// problema: id da assegnare manualmente(per import excel)
-		Provincia p = provincia.getObject();
 		p.getListaComuni().add(com);
 		//p.setId(2l);
 		System.out.println(p.getListaComuni().size());
 	//	provinciaServ.addProvincia(p);
-		Provincia pLetto = provinciaServ.findById(2l);
-		System.out.println(pLetto);
+	//	Provincia pLetto = provinciaServ.findById(2l);
+	//	System.out.println(pLetto);
 //		provinciaServ.deleteProvinciaById(3l);
 		
 		// METODI INDIRIZZO
@@ -67,7 +68,6 @@ public class Runner implements ApplicationRunner {
 	//	indirizzoServ.deleteIndirizzoById(6l);
 		
 		// METODI CLIENTE
-		// Problema ragione sociale faker (risolto?)
 		Cliente cl = cliente.getObject();
 //		System.out.println(cl);
 		

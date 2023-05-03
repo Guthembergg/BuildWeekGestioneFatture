@@ -2,6 +2,7 @@ package com.spring_security_project.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -27,7 +28,7 @@ public class Comune {
 	@Column(nullable = false)
 	private String denominazione;	
 	@JoinColumn(referencedColumnName = "id")
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Provincia codice_provincia;
 	private String nome_provincia;
 	@OneToMany(mappedBy = "comune")
