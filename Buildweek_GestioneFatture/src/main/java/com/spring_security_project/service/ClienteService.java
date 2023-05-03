@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.repository.ClienteRepository;
 
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
@@ -16,6 +17,7 @@ public class ClienteService {
 	@Autowired ClienteRepository repo;
 	
 	public List<Cliente> findAll(){
+	
 		return repo.findAll();
 	}
 	
@@ -27,7 +29,9 @@ public class ClienteService {
 	}
 	
 	public String addCliente(Cliente cliente) {
-	
+		if(repo.existsById(cliente.getId())) {
+			throw new EntityExistsException("Esiste già un cliente con questo id");
+		}
 		repo.save(cliente);
 		return "Cliente aggiunto";
 	}

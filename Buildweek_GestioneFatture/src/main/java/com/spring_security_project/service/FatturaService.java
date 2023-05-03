@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.Indirizzo;
+import com.spring_security_project.repository.ClienteRepository;
 import com.spring_security_project.repository.FatturaRepository;
 import com.spring_security_project.repository.IndirizzoRepository;
 
@@ -16,6 +18,7 @@ import jakarta.persistence.EntityNotFoundException;
 public class FatturaService {
 
 	@Autowired FatturaRepository repo;
+	@Autowired ClienteRepository repoCliente;
 
 	public List<Fattura> findAll(){
 		return repo.findAll();
@@ -31,7 +34,7 @@ public class FatturaService {
 	public String addFattura(Fattura fattura) {
 	
 		repo.save(fattura);
-		return "Indirizzo aggiunto";
+		return "Fattura aggiunta";
 	}
 	
 	public Fattura editFattura(Fattura fattura) {
@@ -46,6 +49,29 @@ public class FatturaService {
 		}  
 		repo.deleteById(id);
 		return "fattura eliminata";
+	}
+	
+	public String associaFatturaCliente(Fattura f, Cliente c) {
+		if(repoCliente.existsById(c.getId())) {
+			f.setCliente(c);
+			c.getListaFatture().add(f);
+			repo.save(f);	
+			repoCliente.save(c);
+			return "Fattura associata";
+		} else {
+			throw new EntityNotFoundException("Nessuna fattura trovata");
+		}
+	}
+	
+	public String associaFatturaEsistente(Long id, Long idCliente) {
+		if(repo.existsById(id) && repoCliente.existsById(idCliente)) {
+			Cliente c = repoCliente.findById(idCliente).get();
+			Fattura f = repo.findById(id).get();
+			c.getListaFatture().add(f);
+			repo.save(f);
+			repoCliente.save(c);
+			return "Fattura associata";
+		} throw new EntityNotFoundException("Fattura o cliente non esistenti");
 	}
 	
 }

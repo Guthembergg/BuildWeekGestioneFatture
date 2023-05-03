@@ -1,6 +1,8 @@
 package com.spring_security_project.runner;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +13,14 @@ import org.springframework.stereotype.Component;
 
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Comune;
+import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.Indirizzo;
 import com.spring_security_project.model.Provincia;
+import com.spring_security_project.model.StatoFattura;
 import com.spring_security_project.model.TipoCliente;
 import com.spring_security_project.service.ClienteService;
 import com.spring_security_project.service.ComuneService;
+import com.spring_security_project.service.FatturaService;
 import com.spring_security_project.service.IndirizzoService;
 import com.spring_security_project.service.ProvinciaService;
 
@@ -26,6 +31,7 @@ public class Runner implements ApplicationRunner {
 	@Autowired ProvinciaService provinciaServ;
 	@Autowired ComuneService comuneServ;
 	@Autowired IndirizzoService indirizzoServ;
+	@Autowired FatturaService fatturaServ;
 	
 	@Autowired @Qualifier("clienteFake") ObjectProvider<Cliente> cliente;
 	@Autowired @Qualifier("clienteCustom") ObjectProvider<Cliente> clienteCustom;
@@ -71,8 +77,15 @@ public class Runner implements ApplicationRunner {
 		Cliente cl = cliente.getObject();
 //		System.out.println(cl);
 		
-		Cliente cl2 = clienteCustom.getObject("MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, i);
+		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, i, i);
 		System.out.println(cl2);
+		//clienteServ.addCliente(cl2);
+		
+		Fattura f = new Fattura(1l, 2023, new Date(2022, 03, 12), 193.94, 1, StatoFattura.EMESSA, null );
+		//fatturaServ.addFattura(f);
+		
+//		Fattura f2 = new Fattura(2l, 2023, new Date(2022, 03, 12), 142.94, 1, StatoFattura.EMESSA, null );
+		fatturaServ.associaFatturaCliente(f, cl2);
 		
 //		clienteServ.addCliente(cl);
 //		clienteServ.deleteClienteById(4l);
