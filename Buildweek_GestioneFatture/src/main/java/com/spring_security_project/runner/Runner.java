@@ -35,7 +35,7 @@ public class Runner implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
+		provinciaServ.saveCSV();
 		// METODI COMUNE
 		// problema: id provincia non assegnato
 		// problema: id da assegnare manualmente(per import excel)
@@ -76,9 +76,9 @@ public class Runner implements ApplicationRunner {
 		
 //		clienteServ.addCliente(cl);
 //		clienteServ.deleteClienteById(4l);
-		Cliente clLetto = clienteServ.findById(1l);
-		System.out.println(clLetto);
-				
+		//Cliente clLetto = clienteServ.findById(1l);
+		//System.out.println(clLetto);
+
 		// ALTRO
 		//1) Aggiungere messaggi di conferma di operazione
 		//avvenuta
