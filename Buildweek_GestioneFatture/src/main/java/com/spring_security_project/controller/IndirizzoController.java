@@ -45,7 +45,7 @@ public class IndirizzoController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> registraIndirizzo(@RequestBody Indirizzo c, @PathVariable Long id){
+	public ResponseEntity<?> modificaIndirizzo(@RequestBody Indirizzo c, @PathVariable Long id){
 		try {return new ResponseEntity<Indirizzo>(service.editIndirizzo(c), HttpStatus.CREATED);
 			
 		} catch (Exception e) {

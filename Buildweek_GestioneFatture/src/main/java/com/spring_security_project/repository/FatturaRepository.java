@@ -19,4 +19,6 @@ public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	public List<Fattura> findByAnno(Integer anno);
 	
 	public List<Fattura> findByImportoBetween(Double importoIniziale, Double importoFinale);
+	
+	public boolean existsByNumero(Integer num);
 }

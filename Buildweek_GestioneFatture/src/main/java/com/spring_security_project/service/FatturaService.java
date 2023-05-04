@@ -14,6 +14,7 @@ import com.spring_security_project.repository.ClienteRepository;
 import com.spring_security_project.repository.FatturaRepository;
 import com.spring_security_project.repository.IndirizzoRepository;
 
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
@@ -90,9 +91,10 @@ public class FatturaService {
 	}
 	
 	public String associaFatturaEsistente( Long idCliente ,Long id) {
+		
 		if(repo.existsById(id) && repoCliente.existsById(idCliente)) {
-			Cliente c = repoCliente.findById(idCliente).get();
 			Fattura f = repo.findById(id).get();
+			Cliente c = repoCliente.findById(idCliente).get();
 			c.getListaFatture().add(f);
 			repo.save(f);
 			repoCliente.save(c);

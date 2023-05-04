@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
+import com.spring_security_project.repository.FatturaRepository;
 import com.spring_security_project.service.ClienteService;
 import com.spring_security_project.service.FatturaService;
 
@@ -25,6 +26,7 @@ public class ClienteController {
 
 	@Autowired ClienteService service;
 	@Autowired FatturaService fatturaServ;
+	@Autowired FatturaRepository fatturaRepo;
 	
 	// FORSE AGGIUNGERE ASSOCIA SEDE OPERATIVA CLIENTE
 	
@@ -136,7 +138,7 @@ public class ClienteController {
 		
 	
 	
-	@GetMapping("/{id}")
+	@GetMapping("/trovaPerId/{id}")
 	public ResponseEntity<?> trovaCliente(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
@@ -146,8 +148,8 @@ public class ClienteController {
 	}
 	
 	
-	@PutMapping("/{id}")
-	public ResponseEntity<?> registraCliente(@RequestBody Cliente c, @PathVariable Long id){
+	@PutMapping("/modifica/{id}")
+	public ResponseEntity<?> modificaCliente(@RequestBody Cliente c, @PathVariable Long id){
 		c.setId(id);
 		try {return new ResponseEntity<Cliente>(service.editCliente(c), HttpStatus.CREATED);
 			
@@ -156,7 +158,7 @@ public class ClienteController {
 		}		 
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/elimina/{id}")
 	public ResponseEntity<?> eliminaCliente(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.deleteClienteById(id), HttpStatus.OK);
@@ -165,8 +167,12 @@ public class ClienteController {
 		}
 	}
 	
-	@PutMapping("/associa/{id}")
-	public ResponseEntity<?> associaFatturaCliente(@RequestBody Fattura f, @PathVariable Long id){
+	@PutMapping("/associaFatturaEsistente/{id}")
+	public ResponseEntity<?> associaFatturaEsistenteACliente(@RequestBody Fattura f, @PathVariable Long id){
+		if(fatturaRepo.existsByNumero(f.getNumero())) {
+			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
+		} 
+		
 		try {return new ResponseEntity<String>(fatturaServ.associaFatturaCliente(f, service.findById(id)), HttpStatus.OK);
 			
 		} catch (Exception e) {
@@ -176,7 +182,12 @@ public class ClienteController {
 	
 	
 	@PutMapping("/associa/{idCliente}/{idFattura}")
-	public ResponseEntity<?> associaFatturaEsistente(@PathVariable Long idCliente,@PathVariable Long idFattura){
+	public ResponseEntity<?> associaFatturaEsistenteAClienteEsistente(@PathVariable Long idCliente,@PathVariable Long idFattura){
+		
+		if(fatturaRepo.existsByNumero(fatturaServ.findById(idFattura).getNumero())) {
+			return new ResponseEntity<>("Numero fattura già esistente", HttpStatus.FOUND);
+		} 
+		
 		try {return new ResponseEntity<String>(fatturaServ.associaFatturaEsistente(idCliente, idFattura), HttpStatus.OK);
 			
 		} catch (Exception e) {
