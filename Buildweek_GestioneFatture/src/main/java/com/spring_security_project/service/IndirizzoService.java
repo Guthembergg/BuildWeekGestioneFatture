@@ -63,7 +63,7 @@ public class IndirizzoService {
 			repo.save(i);
 			repoC.save(c);
 			return "Comune associato";
-		} throw new EntityNotFoundException("Fattura o cliente non esistenti");
+		} throw new EntityNotFoundException("Indirizzo o comune non esistenti");
 	}
 
 }

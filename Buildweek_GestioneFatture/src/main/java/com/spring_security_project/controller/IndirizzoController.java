@@ -61,12 +61,15 @@ public class IndirizzoController {
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
 		}
 	}
+	
 	@PutMapping("/associaComune/{idIndirizzo}/{idComune}")
-	public ResponseEntity<?> associaIndirizzoLegaleEsistente(@PathVariable Long idInd,@PathVariable Long idC){
-		try {return new ResponseEntity<String>(service.associaComuneEsistente(idInd, idC), HttpStatus.OK);
+	public ResponseEntity<?> associaIndirizzoLegaleEsistente(@PathVariable Long idIndirizzo,@PathVariable Long idComune){
+		try {return new ResponseEntity<String>(service.associaComuneEsistente(idIndirizzo, idComune), HttpStatus.OK);
 			
 		} catch (Exception e) {
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
 		}		 
 	}
+	
+
 }
