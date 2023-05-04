@@ -72,8 +72,8 @@ public class FatturaController {
 			}
 		}
 		
-	//ritorna lista di fatture emesse tra due date specifiche
-			@GetMapping("/lista/{data}")
+	//ritorna lista di fatture emessa in una data specifica
+			@GetMapping("/lista/data{data}")
 			public ResponseEntity<?>findByData(@PathVariable Date data){
 				try {
 					return new ResponseEntity<>(service.findByData(data), HttpStatus.OK);
@@ -95,7 +95,7 @@ public class FatturaController {
 		}
 		
 		//ritorna lista di fatture con importo compreso tra {importoIniziale} e {importoFinale}
-				@GetMapping("/lista/{importoIniziale}&{importoFinale}")
+				@GetMapping("/lista/importi/{importoIniziale}/{importoFinale}")
 				public ResponseEntity<?>findByImportoBetween(@PathVariable Double importoIniziale, @PathVariable Double importoFinale){
 					try {
 						return new ResponseEntity<>(service.findByImportoBetween(importoIniziale, importoFinale), HttpStatus.OK);
