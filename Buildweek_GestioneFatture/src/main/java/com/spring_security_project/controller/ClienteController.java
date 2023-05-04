@@ -95,7 +95,7 @@ public class ClienteController {
 				}		
 			}
 			
-			//ritorna lista ordinata per provincia
+			//ritorna lista ordinata per provincia (DA SISTEMARE)
 			@GetMapping("/paginazione/prov")
 			public ResponseEntity<?> recuperaClientiPageableProvincia(Pageable pageable){
 				try {
@@ -106,7 +106,7 @@ public class ClienteController {
 			}
 			
 			//ritorna lista ordinata per parte del nome
-			@GetMapping("/paginazione/{parteNome}")
+			@GetMapping("/paginazione/cercaPerParteNome/{parteNome}")
 			public ResponseEntity<?> recuperaClientiPerParteNome(Pageable pageable, @PathVariable String parteNome){
 				try {
 					return new ResponseEntity<>(service.findByParteDelNome(parteNome), HttpStatus.FOUND);
@@ -116,7 +116,7 @@ public class ClienteController {
 			}
 			
 			//ritorna lista ordinata per fatturato maggiore di {param}
-			@GetMapping("/paginazione/fatturato_mag{fatturato}")
+			@GetMapping("/paginazione/fatturato_maggiore_di{fatturato}")
 			public ResponseEntity<?> recuperaClientiPerFatturatoMaggioreDi(Pageable pageable, @PathVariable Integer fatturato){
 				try {
 					return new ResponseEntity<>(service.findByFatturatoMaggioreDi(fatturato), HttpStatus.FOUND);
@@ -126,7 +126,7 @@ public class ClienteController {
 			}
 			
 			//ritorna lista ordinata per fatturato minore di {param}
-			@GetMapping("/paginazione/fatturato_min{fatturato}")
+			@GetMapping("/paginazione/fatturato_minore_di{fatturato}")
 			public ResponseEntity<?> recuperaClientiPerFatturatoMinoreDi(Pageable pageable, @PathVariable Integer fatturato){
 				try {
 					return new ResponseEntity<>(service.findByFatturatoMinoreDi(fatturato), HttpStatus.FOUND);
@@ -167,8 +167,8 @@ public class ClienteController {
 		}
 	}
 	
-	@PutMapping("/associaFatturaEsistente/{id}")
-	public ResponseEntity<?> associaFatturaEsistenteACliente(@RequestBody Fattura f, @PathVariable Long id){
+	@PutMapping("/associaFattura/{id}")
+	public ResponseEntity<?> associaFatturaAClienteEsistente(@RequestBody Fattura f, @PathVariable Long id){
 		if(fatturaRepo.existsByNumero(f.getNumero())) {
 			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
 		} 
@@ -185,7 +185,7 @@ public class ClienteController {
 	public ResponseEntity<?> associaFatturaEsistenteAClienteEsistente(@PathVariable Long idCliente,@PathVariable Long idFattura){
 		
 		if(fatturaRepo.existsByNumero(fatturaServ.findById(idFattura).getNumero())) {
-			return new ResponseEntity<>("Numero fattura già esistente", HttpStatus.FOUND);
+			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
 		} 
 		
 		try {return new ResponseEntity<String>(fatturaServ.associaFatturaEsistente(idCliente, idFattura), HttpStatus.OK);

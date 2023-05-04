@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
@@ -37,7 +38,7 @@ public class Provincia {
 	@Column(nullable = false)
 	private String regione;
 	@OneToMany(mappedBy = "codice_provincia", fetch = FetchType.EAGER)
-	@JsonIgnoreProperties
+	@JsonIgnore
 	private List<Comune> listaComuni;
 	public Provincia(String sigla, String provincia, String regione) {
 		super();
