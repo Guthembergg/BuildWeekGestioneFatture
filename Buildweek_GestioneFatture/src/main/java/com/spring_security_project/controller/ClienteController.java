@@ -85,7 +85,7 @@ public class ClienteController {
 				}		
 			}
 			
-			//ritorna lista ordinata per data ultimo contatto
+			//ritorna lista ordinata per data ultimo contatto (NON PAGINATO)
 			@GetMapping("/paginazione/data_ult")
 			public ResponseEntity<?> recuperaClientiPageableDataUltCont(Pageable pageable){
 				try {
@@ -105,7 +105,7 @@ public class ClienteController {
 				}		
 			}
 			
-			//ritorna lista ordinata per parte del nome
+			//ritorna lista ordinata per parte del nome (NON PAGINATO)
 			@GetMapping("/paginazione/cercaPerParteNome/{parteNome}")
 			public ResponseEntity<?> recuperaClientiPerParteNome(Pageable pageable, @PathVariable String parteNome){
 				try {
@@ -115,7 +115,7 @@ public class ClienteController {
 				}		
 			}
 			
-			//ritorna lista ordinata per fatturato maggiore di {param}
+			//ritorna lista ordinata per fatturato maggiore di {param} (NON PAGINATO)
 			@GetMapping("/paginazione/fatturato_maggiore_di{fatturato}")
 			public ResponseEntity<?> recuperaClientiPerFatturatoMaggioreDi(Pageable pageable, @PathVariable Integer fatturato){
 				try {
@@ -125,7 +125,7 @@ public class ClienteController {
 				}		
 			}
 			
-			//ritorna lista ordinata per fatturato minore di {param}
+			//ritorna lista ordinata per fatturato minore di {param} (NON PAGINATO)
 			@GetMapping("/paginazione/fatturato_minore_di{fatturato}")
 			public ResponseEntity<?> recuperaClientiPerFatturatoMinoreDi(Pageable pageable, @PathVariable Integer fatturato){
 				try {
