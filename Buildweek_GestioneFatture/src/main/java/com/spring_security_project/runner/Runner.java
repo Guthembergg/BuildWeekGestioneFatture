@@ -49,7 +49,7 @@ public class Runner implements ApplicationRunner {
 		p.setId(1l);
 		Comune com = comune.getObject();
 		com.setProgressivoComune(1l);
-		com.setCodice_provincia(p);
+	//	com.setCodice_provincia(p);
 		// comuneServ.addComune(com);
 		//System.out.println(com);
 		
@@ -67,6 +67,7 @@ public class Runner implements ApplicationRunner {
 		// problema creazione fake di comuni dentro indirizzi e viceversa
 		// creano un circolo errato
 		Indirizzo i = indirizzo.getObject();
+	//	i.setComune(comuneServ.findById(1l));
 //		System.err.println(i);
 	//	i.setId(1l);
 	//	indirizzoServ.addIndirizzo(i);
@@ -87,7 +88,7 @@ public class Runner implements ApplicationRunner {
 		
 	//	Cliente cLetto = clienteServ.findById(1l);
 //		Fattura f2 = new Fattura(2l, 2023, new Date(2022, 03, 12), 142.94, 1, StatoFattura.EMESSA, null );
-		fatturaServ.associaFatturaCliente(f, cl2);
+//		fatturaServ.associaFatturaCliente(f, cl2);
 	//	fatturaServ.associaFatturaEsistente(1l, 1l);
 		
 //		clienteServ.addCliente(cl);

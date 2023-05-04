@@ -2,6 +2,9 @@ package com.spring_security_project.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +35,17 @@ public class Comune {
 	private Provincia codice_provincia;
 	private String nome_provincia;
 	@OneToMany(mappedBy = "comune")
+	@JsonIgnoreProperties
 	private List<Indirizzo> listaIndirizzi;
+	
+	public Comune(Long progressivoComune, String denominazione, Provincia codice_provincia, String nome_provincia) {
+		super();
+		this.progressivoComune = progressivoComune;
+		this.denominazione = denominazione;
+		this.codice_provincia = codice_provincia;
+		this.nome_provincia = nome_provincia;
+	}
+	
+	
 	
 }
