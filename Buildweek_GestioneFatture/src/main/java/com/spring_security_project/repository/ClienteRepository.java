@@ -14,4 +14,28 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long>, PagingA
 	
 	 @Query("SELECT c FROM Cliente c ORDER BY c.nomeContatto ASC")
 	    List<Cliente> findAllOrderBynameDesc();
-}
+	 
+	 @Query("SELECT c FROM Cliente c ORDER BY c.fatturatoAnnuale DESC")
+	 List<Cliente> findAllOrderByFatturato();
+	 
+	 @Query("SELECT c FROM Cliente c ORDER BY c.dataInserimento ASC")
+	 List<Cliente> findAllOrderByDataInserimento();
+	 
+	 @Query("SELECT c FROM Cliente c ORDER BY c.dataUltimoContatto ASC")
+	 List<Cliente> findAllOrderByDataUltimoContatto();
+	 
+	 @Query("SELECT c FROM Cliente c ORDER BY c.sedeLegale.comune.nome_provincia ASC")
+	 List<Cliente> findAllOrderByProvincia();
+	 
+	 @Query("SELECT c FROM Cliente c WHERE c.nomeContatto LIKE %:parte_del_nome%")
+	    List<Cliente> findByParteDelNome(String parte_del_nome);
+	 
+	 @Query("SELECT c FROM Cliente c WHERE c.fatturatoAnnuale >= :fatturato ")
+	 List<Cliente> findByFatturatoMaggioreDi(Integer fatturato);
+	 
+	 @Query("SELECT c FROM Cliente c WHERE c.fatturatoAnnuale <= :fatturato ")
+	 List<Cliente> findByFatturatoMinoreDi(Integer fatturato);
+
+
+
+}		  

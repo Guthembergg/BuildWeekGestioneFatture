@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -60,6 +61,77 @@ public class ClienteController {
 					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 				}		
 			}
+			
+			//ritorna lista ordinata per fatturato
+			@GetMapping("/paginazione/fatturato")
+			public ResponseEntity<?> recuperaClientiPageableFatturato(Pageable pageable){
+				try {
+					return new ResponseEntity<>(service.getAllClientePageableByFatturato(), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
+			//ritorna lista ordinata per data inserimento
+			@GetMapping("/paginazione/data-ins")
+			public ResponseEntity<?> recuperaClientiPageableDataIns(Pageable pageable){
+				try {
+					return new ResponseEntity<>(service.getAllClientePageableByDataInserimento(), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
+			//ritorna lista ordinata per data ultimo contatto
+			@GetMapping("/paginazione/data-ult")
+			public ResponseEntity<?> recuperaClientiPageableDataUltCont(Pageable pageable){
+				try {
+					return new ResponseEntity<>(service.getAllClientePageableByDataUltimoContatto(), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
+			//ritorna lista ordinata per provincia
+			@GetMapping("/paginazione/prov")
+			public ResponseEntity<?> recuperaClientiPageableProvincia(Pageable pageable){
+				try {
+					return new ResponseEntity<>(service.getAllClientePageableByProvincia(), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
+			//ritorna lista ordinata per parte del nome
+			@GetMapping("/paginazione/{parteNome}")
+			public ResponseEntity<?> recuperaClientiPerParteNome(Pageable pageable, @PathVariable String parteNome){
+				try {
+					return new ResponseEntity<>(service.findByParteDelNome(parteNome), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
+			//ritorna lista ordinata per fatturato maggiore di {param}
+			@GetMapping("/paginazione/fatturato_mag{fatturato}")
+			public ResponseEntity<?> recuperaClientiPerFatturatoMaggioreDi(Pageable pageable, @PathVariable Integer fatturato){
+				try {
+					return new ResponseEntity<>(service.findByFatturatoMaggioreDi(fatturato), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
+			//ritorna lista ordinata per fatturato minore di {param}
+			@GetMapping("/paginazione/fatturato_min{fatturato}")
+			public ResponseEntity<?> recuperaClientiPerFatturatoMinoreDi(Pageable pageable, @PathVariable Integer fatturato){
+				try {
+					return new ResponseEntity<>(service.findByFatturatoMinoreDi(fatturato), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+			
 		
 	
 	
