@@ -1,5 +1,9 @@
 package com.spring_security_project.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +36,17 @@ public class Indirizzo {
 	private String localita;
 	@Column(nullable = false)
 	private Integer cap;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
+	@JsonIgnore
 	private Comune comune;
+	
+	public Indirizzo(String via, Integer civico, String localita, Integer cap) {
+		super();
+		this.via = via;
+		this.civico = civico;
+		this.localita = localita;
+		this.cap = cap;
+	}
+	
 	
 }

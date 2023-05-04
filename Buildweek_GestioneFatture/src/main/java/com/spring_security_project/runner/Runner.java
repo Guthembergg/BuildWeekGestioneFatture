@@ -45,19 +45,19 @@ public class Runner implements ApplicationRunner {
 		// METODI COMUNE
 		// problema: id provincia non assegnato
 		// problema: id da assegnare manualmente(per import excel)
-//		Provincia p = provincia.getObject();
-//		p.setId(1l);
-//		Comune com = comune.getObject();
-//		com.setProgressivoComune(1l);
-//		com.setCodice_provincia(p);
+		Provincia p = provincia.getObject();
+		p.setId(1l);
+		Comune com = comune.getObject();
+		com.setProgressivoComune(1l);
+	//	com.setCodice_provincia(p);
 		// comuneServ.addComune(com);
 		//System.out.println(com);
 		
 		// METODI PROVINCIA
 		// problema: id da assegnare manualmente(per import excel)
-//		p.getListaComuni().add(com);
-//		//p.setId(2l);
-//		System.out.println(p.getListaComuni().size());
+		p.getListaComuni().add(com);
+		//p.setId(2l);
+		System.out.println(p.getListaComuni().size());
 	//	provinciaServ.addProvincia(p);
 	//	Provincia pLetto = provinciaServ.findById(2l);
 	//	System.out.println(pLetto);
@@ -66,7 +66,8 @@ public class Runner implements ApplicationRunner {
 		// METODI INDIRIZZO
 		// problema creazione fake di comuni dentro indirizzi e viceversa
 		// creano un circolo errato
-		//Indirizzo i = indirizzo.getObject();
+		Indirizzo i = indirizzo.getObject();
+	//	i.setComune(comuneServ.findById(1l));
 //		System.err.println(i);
 	//	i.setId(1l);
 	//	indirizzoServ.addIndirizzo(i);
@@ -75,19 +76,19 @@ public class Runner implements ApplicationRunner {
 	//	indirizzoServ.deleteIndirizzoById(6l);
 		
 		// METODI CLIENTE
-		//Cliente cl = cliente.getObject();
+		Cliente cl = cliente.getObject();
 //		System.out.println(cl);
 		
-	Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, null,null);
-//		System.out.println(cl);
-	//clienteServ.addCliente(cl2);
+		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, i, i);
+		System.out.println(cl);
+	//	clienteServ.addCliente(cl2);
 		
-		//Fattura f = new Fattura(1l, 2023, new Date(2022, 03, 12), 193.94, 1, StatoFattura.EMESSA, null );
+		Fattura f = new Fattura(1l, 2023, new Date(2022, 03, 12), 193.94, 1, StatoFattura.EMESSA, null );
 	//	fatturaServ.addFattura(f);
 		
 	//	Cliente cLetto = clienteServ.findById(1l);
 //		Fattura f2 = new Fattura(2l, 2023, new Date(2022, 03, 12), 142.94, 1, StatoFattura.EMESSA, null );
-		//fatturaServ.associaFatturaCliente(f, cl2);
+//		fatturaServ.associaFatturaCliente(f, cl2);
 	//	fatturaServ.associaFatturaEsistente(1l, 1l);
 		
 //		clienteServ.addCliente(cl);
