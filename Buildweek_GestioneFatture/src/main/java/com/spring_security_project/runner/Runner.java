@@ -38,6 +38,7 @@ public class Runner implements ApplicationRunner {
 	@Autowired @Qualifier("provinciaFake") ObjectProvider<Provincia> provincia;
 	@Autowired @Qualifier("comuneFake") ObjectProvider<Comune> comune;
 	@Autowired @Qualifier("indirizzoFake") ObjectProvider<Indirizzo> indirizzo;
+	@Autowired @Qualifier("fakeFattura") ObjectProvider<Fattura> fatturaFake;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -80,7 +81,7 @@ public class Runner implements ApplicationRunner {
 		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, null,null);
 //		System.out.println(cl);
 	//clienteServ.addCliente(cl2);
-		
+	
 		//Fattura f = new Fattura(1l, 2023, new Date(2022, 03, 12), 193.94, 1, StatoFattura.EMESSA, null );
 	//	fatturaServ.addFattura(f);
 		

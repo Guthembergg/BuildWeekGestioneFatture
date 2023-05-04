@@ -44,7 +44,7 @@ public class Fattura {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private StatoFattura statoFattura;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JsonIgnore
 	private Cliente cliente;
 	
