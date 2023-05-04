@@ -36,8 +36,6 @@ public class AuthRunner implements ApplicationRunner {
 		if(roleRepository.findAll().size() == 0) {
 			setRoleDefault();			
 		}
-		System.out.println(roleRepository.findAll().size());
-		
 	}
 	
 	private void setRoleDefault() {
