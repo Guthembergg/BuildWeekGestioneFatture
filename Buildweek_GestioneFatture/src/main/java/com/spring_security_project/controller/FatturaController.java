@@ -100,10 +100,12 @@ public class FatturaController {
 		}
 		
 		//ritorna lista di fatture con importo compreso tra {importoIniziale} e {importoFinale}
-				@GetMapping("/lista/importi/iniziale_{importoIniziale}/finale_{importoFinale}")
-				public ResponseEntity<?>findByImportoBetween(@PathVariable Double importoIniziale, @PathVariable Double importoFinale){
+				@GetMapping("/lista/importi/{importoIniziale}/{importoFinale}")
+				public ResponseEntity<?>findByImportoBetween(@PathVariable Integer importoIniziale, @PathVariable Integer importoFinale){
+					Double dIniz =  importoIniziale.doubleValue();
+					Double dFin =  importoFinale.doubleValue();
 					try {
-						return new ResponseEntity<>(service.findByImportoBetween(importoIniziale, importoFinale), HttpStatus.OK);
+						return new ResponseEntity<>(service.findByImportoBetween(dIniz, dFin), HttpStatus.OK);
 					} catch (Exception e) {
 						// TODO: handle exception
 						return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
