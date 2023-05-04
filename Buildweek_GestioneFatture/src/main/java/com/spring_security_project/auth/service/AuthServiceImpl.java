@@ -82,16 +82,16 @@ public class AuthServiceImpl implements AuthService {
         
         
         // Per registrare tutti come USER di Default commentare IF
-        if(registerDto.getRoles() != null) {
-	        registerDto.getRoles().forEach(role -> {
-	        	Role userRole = roleRepository.findByRoleName(getRole(role)).get();
-	        	roles.add(userRole);
-	        });
-        } else {
-        	Role userRole = roleRepository.findByRoleName(ERole.ROLE_USER).get();
-        	roles.add(userRole);
-        }
-        
+//        if(registerDto.getRoles() != null) {
+//	        registerDto.getRoles().forEach(role -> {
+//	        	Role userRole = roleRepository.findByRoleName(getRole(role)).get();
+//	        	roles.add(userRole);
+//	        });
+//        } else {
+//        
+//        }
+    	Role userRole = roleRepository.findByRoleName(ERole.ROLE_USER).get();
+    	roles.add(userRole);
         user.setRoles(roles);
         System.out.println(user);
         userRepository.save(user);

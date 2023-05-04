@@ -1,5 +1,6 @@
 package com.spring_security_project.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import com.spring_security_project.read_CSV.CSVHelper;
 import com.spring_security_project.repository.ProvinciaRepository;
 
 import jakarta.persistence.EntityNotFoundException;
-
+import org.springframework.web.multipart.MultipartFile;
 @Service
 public class ProvinciaService {
 
@@ -34,10 +35,17 @@ public class ProvinciaService {
 		repo.save(provincia);
 		return "Provincia aggiunta";
 	}
-	public void saveCSV() {
-		   List<Provincia> province = CSVHelper.csvToProvincia();
+	public void saveCSV(MultipartFile file) {
+		   List<Provincia> province;
+		try {
+			province = CSVHelper.csvToProvincia(file.getInputStream());
+		     repo.saveAll(province);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		    //System.out.println(province);
-		      repo.saveAll(province);
+		 
 	}
 	
 	public Provincia editProvincia(Provincia provincia) {
