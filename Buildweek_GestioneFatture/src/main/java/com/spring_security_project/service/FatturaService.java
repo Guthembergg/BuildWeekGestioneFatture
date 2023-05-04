@@ -18,6 +18,7 @@ import jakarta.persistence.EntityNotFoundException;
 public class FatturaService {
 
 	@Autowired FatturaRepository repo;
+	@Autowired IndirizzoRepository repoInd;
 	@Autowired ClienteRepository repoCliente;
 
 	public List<Fattura> findAll(){
@@ -63,7 +64,7 @@ public class FatturaService {
 		}
 	}
 	
-	public String associaFatturaEsistente(Long id, Long idCliente) {
+	public String associaFatturaEsistente( Long idCliente ,Long id) {
 		if(repo.existsById(id) && repoCliente.existsById(idCliente)) {
 			Cliente c = repoCliente.findById(idCliente).get();
 			Fattura f = repo.findById(id).get();
@@ -73,5 +74,6 @@ public class FatturaService {
 			return "Fattura associata";
 		} throw new EntityNotFoundException("Fattura o cliente non esistenti");
 	}
+
 	
 }

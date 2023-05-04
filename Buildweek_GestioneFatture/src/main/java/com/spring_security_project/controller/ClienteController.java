@@ -75,7 +75,7 @@ public class ClienteController {
 	}
 	
 	
-	@PutMapping("/associa/{idCliente}/{idFattura}")
+	@PutMapping("/associaFatture/{idCliente}/{idFattura}")
 	public ResponseEntity<?> associaFatturaEsistente(@PathVariable Long idCliente,@PathVariable Long idFattura){
 		try {return new ResponseEntity<String>(fatturaServ.associaFatturaEsistente(idCliente, idFattura), HttpStatus.OK);
 			
@@ -83,4 +83,21 @@ public class ClienteController {
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
 		}		 
 	}
+	@PutMapping("/associaIndirizzoLegale/{idCliente}/{idIndirizzo}")
+	public ResponseEntity<?> associaIndirizzoLegaleEsistente(@PathVariable Long idCliente,@PathVariable Long idIndirizzo){
+		try {return new ResponseEntity<String>(service.associaIndirizzoEsistente(idCliente, idIndirizzo, "legale"), HttpStatus.OK);
+			
+		} catch (Exception e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
+		}		 
+	}
+	@PutMapping("/associaIndirizzoOperativo/{idCliente}/{idIndirizzo}")
+	public ResponseEntity<?> associaIndirizzoOpEsistente(@PathVariable Long idCliente,@PathVariable Long idIndirizzo){
+		try {return new ResponseEntity<String>(service.associaIndirizzoEsistente(idCliente, idIndirizzo, "operativo"), HttpStatus.OK);
+			
+		} catch (Exception e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
+		}		 
+	}
+	
 }
