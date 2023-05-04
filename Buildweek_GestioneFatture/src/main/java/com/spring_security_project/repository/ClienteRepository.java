@@ -1,5 +1,6 @@
 package com.spring_security_project.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -36,6 +37,10 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long>, PagingA
 	 @Query("SELECT c FROM Cliente c WHERE c.fatturatoAnnuale <= :fatturato ")
 	 List<Cliente> findByFatturatoMinoreDi(Integer fatturato);
 
-
-
-}		  
+	 @Query("SELECT c FROM Cliente c WHERE c.dataInserimento BETWEEN :dataInizio AND :dataFine ")
+	 List<Cliente> findByDataInserimento(Date dataInizio, Date dataFine);
+	 
+	 @Query("SELECT c FROM Cliente c WHERE c.dataUltimoContatto BETWEEN :dataInizio AND :dataFine ")
+	 List<Cliente> findByDataUltimoContatto(Date dataInizio, Date dataFine);
+	 
+}		 

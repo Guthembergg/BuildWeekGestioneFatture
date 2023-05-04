@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
+
 
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
@@ -73,7 +72,7 @@ public class ClienteController {
 			}
 			
 			//ritorna lista ordinata per data inserimento
-			@GetMapping("/paginazione/data-ins")
+			@GetMapping("/paginazione/data_ins")
 			public ResponseEntity<?> recuperaClientiPageableDataIns(Pageable pageable){
 				try {
 					return new ResponseEntity<>(service.getAllClientePageableByDataInserimento(), HttpStatus.FOUND);
@@ -83,7 +82,7 @@ public class ClienteController {
 			}
 			
 			//ritorna lista ordinata per data ultimo contatto
-			@GetMapping("/paginazione/data-ult")
+			@GetMapping("/paginazione/data_ult")
 			public ResponseEntity<?> recuperaClientiPageableDataUltCont(Pageable pageable){
 				try {
 					return new ResponseEntity<>(service.getAllClientePageableByDataUltimoContatto(), HttpStatus.FOUND);
