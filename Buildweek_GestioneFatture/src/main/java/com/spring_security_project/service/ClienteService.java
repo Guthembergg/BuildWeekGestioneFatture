@@ -1,5 +1,7 @@
 package com.spring_security_project.service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,19 +122,23 @@ public class ClienteService {
 		if (repoInd.existsById(id) && repo.existsById(idCliente)) {
 			Cliente c = repo.findById(idCliente).get();
 			Indirizzo f = repoInd.findById(id).get();
-			if (type == "legale") {
+			if (type.equals("legale")) {
 				
 				c.setSedeLegale(f);
+				c.setDataUltimoContatto(LocalDate.now());
 				repoInd.save(f);
 				repo.save(c);
-			} else if (type == "operativo") {
+				return "Indirizzo legale associato";
+			} else if (type.equals("operativo")) {
 				c.setSedeOperativa(f);
+				c.setDataUltimoContatto(LocalDate.now());
 				repoInd.save(f);
 				repo.save(c);
-			}else throw new EntityNotFoundException("tipologia indirizzo sbagliato in sevice");
+				return "Indirizzo operativo associato";
+			}else throw new EntityNotFoundException("Inserisci operativo o legale come tipologia");
 
 		
-			return "Indirizzo legale associato";
+			
 		}
 		throw new EntityNotFoundException("Fattura o cliente non esistenti");
 	}

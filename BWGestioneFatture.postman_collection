@@ -181,13 +181,484 @@
 			"response": []
 		},
 		{
-			"name": "RegistraCliente",
+			"name": "TuttiClienti(pag)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione?size=5&page=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerNome",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/nomi",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"nomi"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerFatturato",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/fatturato",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"fatturato"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerDataInserimento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/data_ins",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"data_ins"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerUltimoContatto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/data_ult",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"data_ult"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerProvincia(f)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/prov",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"prov"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerParteDelNome",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/cercaPerParteNome/War",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"cercaPerParteNome",
+						"War"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerFatturatoMaggioreDi",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/fatturato_maggiore_di222222",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"fatturato_maggiore_di222222"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdinaClientiPerFatturatoMinoreDi",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/paginazione/fatturato_minore_di22222",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"paginazione",
+						"fatturato_minore_di22222"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CercaClientePerId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/trovaPerId/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"trovaPerId",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegClienteConSedeLegaleEsistente",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"ufeadewwefafeafeawhif\",\r\n        \"partitaIva\": \"fwaffwfwafeaewdewaf\",\r\n        \"email\": \"mafawdfwawafwaffew@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9921343242399,\r\n        \"pec\": \"pecdiwafemafwaffwafweadwerio@fewa.sos\",\r\n        \"telefono\": \"091 444233fwafwafwafw24455559\",\r\n        \"emailContatto\": \"pecddwefwfwafweaaimewafario@arubawea.sos\",\r\n        \"nomeContatto\": \"proeadweffwawfawaawdva\",\r\n        \"cognomeContatto\": \"prodwwwfweawfwaaeavewaa2\",\r\n        \"telefonoContatto\": \"90835ffweawfawa23532302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n              \"id\": 37,\r\n        \"via\": \"dwa\",\r\n        \"civico\": 187,\r\n        \"localita\": \"Belize\",\r\n        \"cap\": 65860\r\n        }\r\n    }\r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"ufeadewwefafeafeawhif\",\r\n        \"partitaIva\": \"fwaffwfwafeaewdewaf\",\r\n        \"email\": \"mafawdfwawafwaffew@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9921349,\r\n        \"pec\": \"pecdiwafemafwaffwafweadwerio@fewa.sos\",\r\n        \"telefono\": \"091 444233fwafwafwafw24455559\",\r\n        \"emailContatto\": \"pecddwefwfwafweaaimewafario@arubawea.sos\",\r\n        \"nomeContatto\": \"proeadweffwawfawaawdva\",\r\n        \"cognomeContatto\": \"prodwwwfweawfwaaeavewaa2\",\r\n        \"telefonoContatto\": \"90835ffweawfawa23532302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n              \"id\": 16,\r\n        \"via\": \"dwa\",\r\n        \"civico\": 187,\r\n        \"localita\": \"Belize\",\r\n        \"cap\": 65860\r\n        }\r\n    }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -225,13 +696,13 @@
 			"response": []
 		},
 		{
-			"name": "RegistraCliente Copy",
+			"name": "RegClienteSedeLegaleEOperativaEsistenti",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"LuigiMario_PA\",\r\n        \"partitaIva\": \"P.IVA342895302\",\r\n        \"email\": \"luigi.mario@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9992324249,\r\n        \"pec\": \"pecdiluigimario@aruba.ex\",\r\n        \"telefono\": \"091 23524559\",\r\n        \"emailContatto\": \"pecdiluigi@aruba.sos\",\r\n        \"nomeContatto\": \"Luigi\",\r\n        \"cognomeContatto\": \"Mario\",\r\n        \"telefonoContatto\": \"091 23524559\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"WarioMario_PA\",\r\n        \"partitaIva\": \"P.IVA342895302221\",\r\n        \"email\": \"wario.mario@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 99924,\r\n        \"pec\": \"pecdilwariomario@aruba.ex\",\r\n        \"telefono\": \"091 23524559\",\r\n        \"emailContatto\": \"pecdiwario@aruba.sos\",\r\n        \"nomeContatto\": \"Wario\",\r\n        \"cognomeContatto\": \"Mario\",\r\n        \"telefonoContatto\": \"091 2352239\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\" : 16,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"id\" : 16,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -269,13 +740,57 @@
 			"response": []
 		},
 		{
-			"name": "ModificaCliente",
+			"name": "RegistraClienteNoIndirizzi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"ragioneSociale\": \"Sonic_PA\",\r\n        \"partitaIva\": \"P.IVA342893121\",\r\n        \"email\": \"sonic.edgehog@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 924,\r\n        \"pec\": \"pecdilsonico@aruba.ex\",\r\n        \"telefono\": \"091 29683229\",\r\n        \"emailContatto\": \"pecdisonic@aruba.sos\",\r\n        \"nomeContatto\": \"Sonic\",\r\n        \"cognomeContatto\": \"Sonic\",\r\n        \"telefonoContatto\": \"091 231239\",\r\n        \"tipoCliente\": \"PA\"\r\n    }\r\n   \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModificaCliente(creaIndirizziSeNonSpecificoGliID)",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"MarioRowad4rwcsfessi_PA\",\r\n        \"partitaIva\": \"1385dfwafwadw4r3ceq39853\",\r\n        \"email\": \"mario@exampwfwawadrefa3qewale.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 999999219129,\r\n        \"pec\": \"pecdimaridwafwawadfawedwawafo@aruba.sos\",\r\n        \"telefono\": \"091 4445fwa5dwfwdwaaadwe559\",\r\n        \"emailContatto\": \"pecdifwamfawawadwawrio@aruba.sos\",\r\n        \"nomeContatto\": \"prdwadafwafwfeaawova\",\r\n        \"cognomeContatto\": \"prdwafwafwfwaadwaova2\",\r\n        \"telefonoContatto\": \"908dfawwfwaadwafwa302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 33,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"MarioRowad4rwcsfessi_PA\",\r\n        \"partitaIva\": \"1385dfwafwadw4r3ceq39853\",\r\n        \"email\": \"mario@exampwfwawadrefa3qewale.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 99999,\r\n        \"pec\": \"pecdimaridwafwawadfawedwawafo@aruba.sos\",\r\n        \"telefono\": \"091 4445fwa5dwfwdwaaadwe559\",\r\n        \"emailContatto\": \"pecdifwamfawawadwawrio@aruba.sos\",\r\n        \"nomeContatto\": \"prdwadafwafwfeaawova\",\r\n        \"cognomeContatto\": \"prdwafwafwfwaadwaova2\",\r\n        \"telefonoContatto\": \"908dfawwfwaadwafwa302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 15,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"id\" : 14,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -328,14 +843,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/clienti/2",
+					"raw": "localhost:8080/clienti/17",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"clienti",
-						"2"
+						"17"
 					],
 					"query": [
 						{
@@ -353,85 +868,6 @@
 							"value": "ASC",
 							"disabled": true
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AssociaFatturaCliente",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"anno\": 2023,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 5000.94,\r\n        \"numero\": 32,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/clienti/associa/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"clienti",
-						"associa",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AssociaFatturaEsistenteAClienteEsistente",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 2,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/clienti/associa/1/6",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"clienti",
-						"associa",
-						"1",
-						"6"
 					]
 				}
 			},
@@ -510,7 +946,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/indirizzi/associaComune/12/1",
+					"raw": "localhost:8080/indirizzi/associaComune/16/20",
 					"host": [
 						"localhost"
 					],
@@ -518,7 +954,36 @@
 					"path": [
 						"indirizzi",
 						"associaComune",
-						"12",
+						"16",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModificaIndirizzo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"via\": \"Via Lauro 5\",\r\n        \"civico\": 58,\r\n        \"localita\": \"Barbuda\",\r\n        \"cap\": 12363\r\n \r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/indirizzi/modifica/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"indirizzi",
+						"modifica",
 						"1"
 					]
 				}
@@ -526,7 +991,66 @@
 			"response": []
 		},
 		{
-			"name": "TuttiComuni(pag)",
+			"name": "AssociaIndirizzoACliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"via\": \"Via Lauro 5\",\r\n        \"civico\": 58,\r\n        \"localita\": \"Barbuda\",\r\n        \"cap\": 12363\r\n \r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/indirizzi/associaIndirizzoUtente/1/10/legale",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"indirizzi",
+						"associaIndirizzoUtente",
+						"1",
+						"10",
+						"legale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminaIndirizzoSenzaCliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/indirizzi/14",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"indirizzi",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TutteFatture",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -543,31 +1067,401 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/comuni/lista",
+					"raw": "localhost:8080/fatture/lista",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"comuni",
+						"fatture",
 						"lista"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "2",
-							"disabled": true
-						},
-						{
-							"key": "size",
-							"value": "5",
-							"disabled": true
-						},
-						{
-							"key": "sort",
-							"value": "ASC",
-							"disabled": true
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TrovaFatturaPerId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/trovaPerId/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"trovaPerId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TrovaFatturaPerIdCliente(f)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/trovaPerCliente/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"trovaPerCliente",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TrovaFatturaPerStato",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/listaPerStato/EMESSA",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"listaPerStato",
+						"EMESSA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TrovaFatturaPerData(f)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/listaPerData/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"listaPerData",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TrovaFatturaPerAnno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/listaFattureAnnue/2022",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"listaFattureAnnue",
+						"2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TrovaFatturaPerImportiBetween",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/lista/importi/0/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"lista",
+						"importi",
+						"0",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistraFattura",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 22,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModificaFattura",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 5.94,\r\n        \"numero\": 51,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminaFattura",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 22,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fatture/elimina/9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fatture",
+						"elimina",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreaFatturaDiClienteEsistente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anno\": 2023,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 5000.94,\r\n        \"numero\": 34,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/associaFattura/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"associaFattura",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssociaFatturaEsistenteAClienteEsistente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 2,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clienti/associa/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clienti",
+						"associa",
+						"1",
+						"1"
 					]
 				}
 			},
@@ -619,7 +1513,7 @@
 			"response": []
 		},
 		{
-			"name": "TutteFatture",
+			"name": "TuttiComuni(pag)",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -636,14 +1530,31 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/lista",
+					"raw": "localhost:8080/comuni/lista",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"fatture",
+						"comuni",
 						"lista"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "ASC",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -728,43 +1639,6 @@
 						"api",
 						"test",
 						"admin"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "RegistraFattura",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 2,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/fatture",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"fatture"
 					]
 				}
 			},

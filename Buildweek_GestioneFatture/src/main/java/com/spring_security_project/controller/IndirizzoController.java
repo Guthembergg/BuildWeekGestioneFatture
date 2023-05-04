@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring_security_project.model.Indirizzo;
+import com.spring_security_project.service.ClienteService;
 import com.spring_security_project.service.IndirizzoService;
 
 @RestController
@@ -20,6 +21,7 @@ import com.spring_security_project.service.IndirizzoService;
 public class IndirizzoController {
 	
 	@Autowired IndirizzoService service;
+	@Autowired ClienteService clienteServ;
 	
 	@PostMapping
 	public ResponseEntity<?> registraIndirizzo(@RequestBody Indirizzo i){
@@ -35,7 +37,7 @@ public class IndirizzoController {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/trovaPerId/{id}")
 	public ResponseEntity<?> trovaIndirizzo(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
@@ -44,8 +46,9 @@ public class IndirizzoController {
 		}
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/modifica/{id}")
 	public ResponseEntity<?> modificaIndirizzo(@RequestBody Indirizzo c, @PathVariable Long id){
+		c.setId(id);
 		try {return new ResponseEntity<Indirizzo>(service.editIndirizzo(c), HttpStatus.CREATED);
 			
 		} catch (Exception e) {
@@ -63,7 +66,7 @@ public class IndirizzoController {
 	}
 	
 	@PutMapping("/associaComune/{idIndirizzo}/{idComune}")
-	public ResponseEntity<?> associaIndirizzoLegaleEsistente(@PathVariable Long idIndirizzo,@PathVariable Long idComune){
+	public ResponseEntity<?> associaIndirizzoAComune(@PathVariable Long idIndirizzo,@PathVariable Long idComune){
 		try {return new ResponseEntity<String>(service.associaComuneEsistente(idIndirizzo, idComune), HttpStatus.OK);
 			
 		} catch (Exception e) {
@@ -71,5 +74,13 @@ public class IndirizzoController {
 		}		 
 	}
 	
+	@PutMapping("/associaIndirizzoUtente/{idIndirizzo}/{idCliente}/{type}")
+	public ResponseEntity<?> associaIndirizzoAUtente(@PathVariable Long idIndirizzo, @PathVariable Long idCliente, @PathVariable String type){	
+			try {
+				return new ResponseEntity<String>(clienteServ.associaIndirizzoEsistente(idCliente, idIndirizzo,  type), HttpStatus.OK);
+			} catch (Exception e) {
+				return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
+			}		 	
+	}
 
 }
