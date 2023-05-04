@@ -41,7 +41,7 @@ public class Runner implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		provinciaServ.saveCSV();
+		//provinciaServ.saveCSV();
 		// METODI COMUNE
 		// problema: id provincia non assegnato
 		// problema: id da assegnare manualmente(per import excel)
@@ -50,7 +50,7 @@ public class Runner implements ApplicationRunner {
 		Comune com = comune.getObject();
 		com.setProgressivoComune(1l);
 		com.setCodice_provincia(p);
-		comuneServ.addComune(com);
+		// comuneServ.addComune(com);
 		//System.out.println(com);
 		
 		// METODI PROVINCIA
@@ -82,10 +82,11 @@ public class Runner implements ApplicationRunner {
 		//clienteServ.addCliente(cl2);
 		
 		Fattura f = new Fattura(1l, 2023, new Date(2022, 03, 12), 193.94, 1, StatoFattura.EMESSA, null );
-		//fatturaServ.addFattura(f);
+	//	fatturaServ.addFattura(f);
 		
 //		Fattura f2 = new Fattura(2l, 2023, new Date(2022, 03, 12), 142.94, 1, StatoFattura.EMESSA, null );
-		fatturaServ.associaFatturaCliente(f, cl2);
+	//	fatturaServ.associaFatturaCliente(f, cl2);
+	//	fatturaServ.associaFatturaEsistente(1l, 1l);
 		
 //		clienteServ.addCliente(cl);
 //		clienteServ.deleteClienteById(4l);

@@ -59,7 +59,7 @@ public class FatturaService {
 			repoCliente.save(c);
 			return "Fattura associata";
 		} else {
-			throw new EntityNotFoundException("Nessuna fattura trovata");
+			throw new EntityNotFoundException("Il cliente inserito non esiste");
 		}
 	}
 	

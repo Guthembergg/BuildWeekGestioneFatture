@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring_security_project.service.ProvinciaService;
 
 @RestController
-@RequestMapping("/api/provincia")
+@RequestMapping("/province")
 public class ProvinciaController {
 
 	@Autowired ProvinciaService service;
