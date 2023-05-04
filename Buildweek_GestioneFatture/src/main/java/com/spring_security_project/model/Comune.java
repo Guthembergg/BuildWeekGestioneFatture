@@ -37,6 +37,7 @@ public class Comune {
 	@OneToMany(mappedBy = "comune")
 	@JsonIgnoreProperties
 	private List<Indirizzo> listaIndirizzi;
+	
 	public Comune(Long progressivoComune, String denominazione, Provincia codice_provincia, String nome_provincia) {
 		super();
 		this.progressivoComune = progressivoComune;

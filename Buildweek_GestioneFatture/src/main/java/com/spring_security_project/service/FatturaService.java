@@ -1,5 +1,6 @@
 package com.spring_security_project.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.Indirizzo;
+import com.spring_security_project.model.StatoFattura;
 import com.spring_security_project.repository.ClienteRepository;
 import com.spring_security_project.repository.FatturaRepository;
 import com.spring_security_project.repository.IndirizzoRepository;
@@ -30,6 +32,29 @@ public class FatturaService {
 			throw new EntityNotFoundException("Nessuna Fattura associata a questo ID");
 		}
 		return repo.findById(id).get();
+	}
+	
+	public List<Fattura> findByCliente(Long id){
+		if(!repoCliente.existsById(id)) {
+			throw new EntityNotFoundException("Nessun cliente trovato");
+		}
+		return repo.findByCliente(id);
+	}
+	
+	public List<Fattura> findByStatoFattura(StatoFattura statoFattura){		
+		return repo.findByStatoFattura(statoFattura);
+	}
+	
+	public List<Fattura> findByData(Date data){
+		return repo.findByData(data);
+	}
+	
+	public List<Fattura> findByAnno(Integer anno){	
+		return repo.findByAnno(anno);
+	}
+	
+	public List<Fattura> findByImportoBetween(Double importoIniziale, Double importoFinale){
+		return repo.findByImportoBetween(importoIniziale, importoFinale);
 	}
 	
 	public String addFattura(Fattura fattura) {

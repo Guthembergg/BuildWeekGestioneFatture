@@ -40,12 +40,57 @@ public class ClienteService {
 		} else return (repo.findAllOrderBynameDesc());
 	}
 	
+	public List<Cliente> getAllClientePageableByFatturato(){
+		if(repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Nessun cliente in archivio");
+		} else return (repo.findAllOrderByFatturato());
+	}
+	
+	public List<Cliente> getAllClientePageableByDataInserimento(){
+		if(repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Nessun cliente in archivio");
+		} else return (repo.findAllOrderByDataInserimento());
+	}
+	
+	public List<Cliente> getAllClientePageableByDataUltimoContatto(){
+		if(repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Nessun cliente in archivio");
+		} else return (repo.findAllOrderByDataUltimoContatto());
+	}
+	
+	public List<Cliente> getAllClientePageableByProvincia(){
+		if(repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Nessun cliente in archivio");
+		} else return (repo.findAllOrderByProvincia());
+	}
+	
 
 	public Cliente findById(Long id) {
 		if (!repo.existsById(id)) {
 			throw new EntityNotFoundException("Nessun cliente associato a questo ID");
 		}
 		return repo.findById(id).get();
+	}
+	
+	public List<Cliente> findByParteDelNome(String parteNome) {
+		if (repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Archivio clienti vuoto");
+		}
+		return repo.findByParteDelNome(parteNome);
+	}
+	
+	public List<Cliente> findByFatturatoMaggioreDi(Integer fatturato) {
+		if (repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Archivio clienti vuoto");
+		}
+		return repo.findByFatturatoMaggioreDi(fatturato);
+	}
+	
+	public List<Cliente> findByFatturatoMinoreDi(Integer fatturato) {
+		if (repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Archivio clienti vuoto");
+		}
+		return repo.findByFatturatoMinoreDi(fatturato);
 	}
 
 	public String addCliente(Cliente cliente) {
