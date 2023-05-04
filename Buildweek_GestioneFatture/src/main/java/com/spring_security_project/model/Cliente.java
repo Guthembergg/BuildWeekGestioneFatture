@@ -129,6 +129,25 @@ public class Cliente {
 		this.tipoCliente = tipoCliente;
 		this.sedeLegale = sedeLegale;
 	}
+
+	public Cliente(String ragioneSociale, String partitaIva, String email, Integer fatturatoAnnuale, String pec,
+			String telefono, String emailContatto, String nomeContatto, String cognomeContatto,
+			String telefonoContatto) {
+		super();
+		this.ragioneSociale = ragioneSociale;
+		this.partitaIva = partitaIva;
+		this.email = email;
+		this.fatturatoAnnuale = fatturatoAnnuale;
+		this.pec = pec;
+		this.telefono = telefono;
+		this.emailContatto = emailContatto;
+		this.nomeContatto = nomeContatto;
+		this.cognomeContatto = cognomeContatto;
+		this.telefonoContatto = telefonoContatto;
+	}
+
+
+
 	
 	
 
