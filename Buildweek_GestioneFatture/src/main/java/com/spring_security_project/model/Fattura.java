@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +45,7 @@ public class Fattura {
 	@Column(nullable = false)
 	private StatoFattura statoFattura;
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Cliente cliente;
 	
 }

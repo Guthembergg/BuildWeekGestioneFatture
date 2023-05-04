@@ -30,9 +30,7 @@ public class IndirizzoService {
 	}
 
 	public String addIndirizzo(Indirizzo indirizzo) {
-		if (repo.existsById(indirizzo.getId())) {
-			throw new EntityExistsException("Esiste già un indirizzo con questo id");
-		}
+	
 		repo.save(indirizzo);
 		return "Indirizzo aggiunto";
 	}

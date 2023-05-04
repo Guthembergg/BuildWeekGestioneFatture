@@ -28,8 +28,9 @@ public class ClienteService {
 		return repo.findById(id).get();
 	}
 	
+	
 	public String addCliente(Cliente cliente) {
-		if(repo.existsById(cliente.getId())) {
+		if(repo.existsByEmail(cliente.getEmail())) {
 			throw new EntityExistsException("Esiste già un cliente con questo id");
 		}
 		repo.save(cliente);
