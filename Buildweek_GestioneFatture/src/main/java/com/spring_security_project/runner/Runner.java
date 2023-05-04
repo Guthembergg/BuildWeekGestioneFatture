@@ -77,8 +77,7 @@ public class Runner implements ApplicationRunner {
 		// METODI CLIENTE
 		//Cliente cl = cliente.getObject();
 //		System.out.println(cl);
-		
-	Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, null,null);
+		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, null,null);
 //		System.out.println(cl);
 	//clienteServ.addCliente(cl2);
 		

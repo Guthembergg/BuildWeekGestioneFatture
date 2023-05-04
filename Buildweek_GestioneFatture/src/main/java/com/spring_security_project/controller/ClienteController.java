@@ -26,6 +26,8 @@ public class ClienteController {
 	@Autowired ClienteService service;
 	@Autowired FatturaService fatturaServ;
 	
+	// FORSE AGGIUNGERE ASSOCIA SEDE OPERATIVA CLIENTE
+	
 	@PostMapping
 	public ResponseEntity<?> registraCliente(@RequestBody Cliente c){
 		try {
@@ -146,6 +148,7 @@ public class ClienteController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> registraCliente(@RequestBody Cliente c, @PathVariable Long id){
+		c.setId(id);
 		try {return new ResponseEntity<Cliente>(service.editCliente(c), HttpStatus.CREATED);
 			
 		} catch (Exception e) {
