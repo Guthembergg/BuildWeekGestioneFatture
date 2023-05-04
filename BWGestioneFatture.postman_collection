@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Mario\",\r\n    \"username\": \"Rossino\",\r\n    \"email\": \"mariano.rossi.mr@ex.com\",\r\n    \"password\": \"qwerty\",\r\n    \"roles\":[\"ROLE_USER\"]\r\n}",
+					"raw": "{\r\n    \"name\": \"Mario\",\r\n    \"username\": \"Rossinone\",\r\n    \"email\": \"mariano.rossinone.mr@ex.com\",\r\n    \"password\": \"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,6 +92,64 @@
 			"response": []
 		},
 		{
+			"name": "UploadCsvProvince",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/cloud/eclipse-workspace/BuildWeekGestioneFatture/Buildweek_GestioneFatture/province-italiane-id2.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/province/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"province",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadCsvComune",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/cloud/eclipse-workspace/BuildWeekGestioneFatture/Buildweek_GestioneFatture/comuni-italiani-edit.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/comuni/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comuni",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "TuttiIClienti",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -129,7 +187,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"ufeadewwefawhif\",\r\n        \"partitaIva\": \"fwaffweaewdewaf\",\r\n        \"email\": \"mafawdfwawafew@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9999,\r\n        \"pec\": \"pecdiwafemafwafdwerio@fewa.sos\",\r\n        \"telefono\": \"091 444233fwafw24455559\",\r\n        \"emailContatto\": \"pecddwefwaaimewafario@arubawea.sos\",\r\n        \"nomeContatto\": \"proeadwefwaawdva\",\r\n        \"cognomeContatto\": \"prodwwwfwaaeavewaa2\",\r\n        \"telefonoContatto\": \"90835fwa23532302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n              \"id\": 37,\r\n        \"via\": \"dwa\",\r\n        \"civico\": 187,\r\n        \"localita\": \"Belize\",\r\n        \"cap\": 65860,\r\n            \"comune\" : {\r\n                 \"progressivoComune\": 1,\r\n            \"denominazione\": \"Amato laziale\",\r\n            \"codice_provincia\": null,\r\n            \"nome_provincia\": \"Gilda calabro\"\r\n            }\r\n        }\r\n    }\r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"ufeadewwefafeafeawhif\",\r\n        \"partitaIva\": \"fwaffwfwafeaewdewaf\",\r\n        \"email\": \"mafawdfwawafwaffew@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9921343242399,\r\n        \"pec\": \"pecdiwafemafwaffwafweadwerio@fewa.sos\",\r\n        \"telefono\": \"091 444233fwafwafwafw24455559\",\r\n        \"emailContatto\": \"pecddwefwfwafweaaimewafario@arubawea.sos\",\r\n        \"nomeContatto\": \"proeadweffwawfawaawdva\",\r\n        \"cognomeContatto\": \"prodwwwfweawfwaaeavewaa2\",\r\n        \"telefonoContatto\": \"90835ffweawfawa23532302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n              \"id\": 37,\r\n        \"via\": \"dwa\",\r\n        \"civico\": 187,\r\n        \"localita\": \"Belize\",\r\n        \"cap\": 65860\r\n        }\r\n    }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -173,7 +231,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"id\": 2,\r\n        \"ragioneSociale\": \"MarioRowad4rwfessi_PA\",\r\n        \"partitaIva\": \"1385dfwafwadw39853\",\r\n        \"email\": \"mario@exampwfwawadewale.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9999,\r\n        \"pec\": \"pecdimaridwafwawado@aruba.sos\",\r\n        \"telefono\": \"091 4445fwa5dwadwe559\",\r\n        \"emailContatto\": \"pecdifwamadwawrio@aruba.sos\",\r\n        \"nomeContatto\": \"prdwadafwawova\",\r\n        \"cognomeContatto\": \"prdwafwadwaova2\",\r\n        \"telefonoContatto\": \"908dfawwadwa302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 33,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"LuigiMario_PA\",\r\n        \"partitaIva\": \"P.IVA342895302\",\r\n        \"email\": \"luigi.mario@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9992324249,\r\n        \"pec\": \"pecdiluigimario@aruba.ex\",\r\n        \"telefono\": \"091 23524559\",\r\n        \"emailContatto\": \"pecdiluigi@aruba.sos\",\r\n        \"nomeContatto\": \"Luigi\",\r\n        \"cognomeContatto\": \"Mario\",\r\n        \"telefonoContatto\": \"091 23524559\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -217,7 +275,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n\r\n        \"email\": \"mario@exampwfwawadewale.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 20494,\r\n        \"pec\": \"pecdimaridwafwawado@aruba.sos\",\r\n        \"telefono\": \"091 4445fwa5dwadwe559\",\r\n        \"emailContatto\": \"pecdifwamadwawrio@aruba.sos\",\r\n        \"nomeContatto\": \"prdwadafwawova\",\r\n        \"cognomeContatto\": \"prdwafwadwaova2\",\r\n        \"telefonoContatto\": \"908dfawwadwa302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 33,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"MarioRowad4rwcsfessi_PA\",\r\n        \"partitaIva\": \"1385dfwafwadw4r3ceq39853\",\r\n        \"email\": \"mario@exampwfwawadrefa3qewale.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 999999219129,\r\n        \"pec\": \"pecdimaridwafwawadfawedwawafo@aruba.sos\",\r\n        \"telefono\": \"091 4445fwa5dwfwdwaaadwe559\",\r\n        \"emailContatto\": \"pecdifwamfawawadwawrio@aruba.sos\",\r\n        \"nomeContatto\": \"prdwadafwafwfeaawova\",\r\n        \"cognomeContatto\": \"prdwafwafwfwaadwaova2\",\r\n        \"telefonoContatto\": \"908dfawwfwaadwafwa302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 33,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -225,13 +283,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/clienti",
+					"raw": "localhost:8080/clienti/4",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"clienti"
+						"clienti",
+						"4"
 					],
 					"query": [
 						{
@@ -431,6 +490,36 @@
 					"port": "8080",
 					"path": [
 						"indirizzi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssociaIndirizzoEsistenteAComuneEsistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/indirizzi/associaComune/12/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"indirizzi",
+						"associaComune",
+						"12",
+						"1"
 					]
 				}
 			},
