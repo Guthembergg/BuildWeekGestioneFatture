@@ -72,11 +72,33 @@ public class FatturaController {
 			}
 		}
 		
-		//ritorna lista di fatture emesse tra due date specifiche
-				@GetMapping("/lista/{data}")
-				public ResponseEntity<?>findByData(@PathVariable Date data){
+	//ritorna lista di fatture emesse tra due date specifiche
+			@GetMapping("/lista/{data}")
+			public ResponseEntity<?>findByData(@PathVariable Date data){
+				try {
+					return new ResponseEntity<>(service.findByData(data), HttpStatus.OK);
+				} catch (Exception e) {
+					// TODO: handle exception
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}
+			}
+				
+	//ritorna lista di fatture emesse in un anno
+		@GetMapping("/lista/{anno}")
+		public ResponseEntity<?>findByAnno(@PathVariable Integer anno){
+			try {
+				return new ResponseEntity<>(service.findByAnno(anno), HttpStatus.OK);
+			} catch (Exception e) {
+				// TODO: handle exception
+				return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+			}
+		}
+		
+		//ritorna lista di fatture con importo compreso tra {importoIniziale} e {importoFinale}
+				@GetMapping("/lista/{importoIniziale}&{importoFinale}")
+				public ResponseEntity<?>findByImportoBetween(@PathVariable Double importoIniziale, @PathVariable Double importoFinale){
 					try {
-						return new ResponseEntity<>(service.findByData(data), HttpStatus.OK);
+						return new ResponseEntity<>(service.findByImportoBetween(importoIniziale, importoFinale), HttpStatus.OK);
 					} catch (Exception e) {
 						// TODO: handle exception
 						return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
