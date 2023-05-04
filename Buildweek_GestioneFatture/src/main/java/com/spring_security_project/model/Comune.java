@@ -45,16 +45,4 @@ public class Comune {
 		this.nome_provincia = nome_provincia;
 	}
 	
-	
-	
-	public Comune(Long progressivoComune, String denominazione, Provincia codice_provincia, String nome_provincia) {
-		super();
-		this.progressivoComune = progressivoComune;
-		this.denominazione = denominazione;
-		this.codice_provincia = codice_provincia;
-		this.nome_provincia = nome_provincia;
-	}
-	
-	
-	
 }
