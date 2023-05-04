@@ -69,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"password\": \"qwerty\",\r\n    \"username\": \"Rossi\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Rossinone\",\r\n    \"password\": \"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -907,6 +907,16 @@
 		{
 			"name": "RegistraIndirizzo",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpYW5vLnJvc3Npbm9uZS5tckBleC5jb20iLCJpYXQiOjE2ODMyMzM0MjcsImV4cCI6MTY4MzgzODIyN30.stKkTlMrpvBlN3vs8xT3jqbwJbiiffByGvsO7FFnu6RG-dWBNoNfokvxuBiMTnDX",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
