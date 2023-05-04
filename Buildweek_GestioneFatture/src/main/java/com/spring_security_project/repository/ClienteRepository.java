@@ -6,4 +6,5 @@ import com.spring_security_project.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
+	public boolean existsByEmail(String email);
 }
