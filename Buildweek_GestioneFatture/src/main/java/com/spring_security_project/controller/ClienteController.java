@@ -1,6 +1,7 @@
 package com.spring_security_project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
@@ -38,6 +40,29 @@ public class ClienteController {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 	
+	
+	//ritorna lista con paginazione
+		@GetMapping("/paginazione")
+		public ResponseEntity<?> recuperaClientiPageable(Pageable pageable){
+			try {
+				return new ResponseEntity<>(service.getAllClientePageable(pageable), HttpStatus.FOUND);
+			} catch (Exception e) {
+				return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+			}		
+		}
+		
+		//ritorna lista ordinata per nome
+			@GetMapping("/paginazione/nomi")
+			public ResponseEntity<?> recuperaClientiPageableName(Pageable pageable){
+				try {
+					return new ResponseEntity<>(service.getAllClientePageableByName(), HttpStatus.FOUND);
+				} catch (Exception e) {
+					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+				}		
+			}
+		
+	
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> trovaCliente(@PathVariable Long id){
 		try {
@@ -46,6 +71,7 @@ public class ClienteController {
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
 		}
 	}
+	
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> registraCliente(@RequestBody Cliente c, @PathVariable Long id){
@@ -75,7 +101,7 @@ public class ClienteController {
 	}
 	
 	
-	@PutMapping("/associaFatture/{idCliente}/{idFattura}")
+	@PutMapping("/associa/{idCliente}/{idFattura}")
 	public ResponseEntity<?> associaFatturaEsistente(@PathVariable Long idCliente,@PathVariable Long idFattura){
 		try {return new ResponseEntity<String>(fatturaServ.associaFatturaEsistente(idCliente, idFattura), HttpStatus.OK);
 			
@@ -83,21 +109,4 @@ public class ClienteController {
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
 		}		 
 	}
-	@PutMapping("/associaIndirizzoLegale/{idCliente}/{idIndirizzo}")
-	public ResponseEntity<?> associaIndirizzoLegaleEsistente(@PathVariable Long idCliente,@PathVariable Long idIndirizzo){
-		try {return new ResponseEntity<String>(service.associaIndirizzoEsistente(idCliente, idIndirizzo, "legale"), HttpStatus.OK);
-			
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
-		}		 
-	}
-	@PutMapping("/associaIndirizzoOperativo/{idCliente}/{idIndirizzo}")
-	public ResponseEntity<?> associaIndirizzoOpEsistente(@PathVariable Long idCliente,@PathVariable Long idIndirizzo){
-		try {return new ResponseEntity<String>(service.associaIndirizzoEsistente(idCliente, idIndirizzo, "operativo"), HttpStatus.OK);
-			
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
-		}		 
-	}
-	
 }

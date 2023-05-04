@@ -3,6 +3,8 @@ package com.spring_security_project.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.spring_security_project.model.Cliente;
@@ -25,6 +27,19 @@ public class ClienteService {
 
 		return repo.findAll();
 	}
+	
+	public Page<Cliente> getAllClientePageable(Pageable pageable){
+		if(repo.findAll(pageable).isEmpty()) {
+			throw new EntityNotFoundException("Nessun cliente in archivio");
+		} else return repo.findAll(pageable);
+	}
+	
+	public List<Cliente> getAllClientePageableByName(){
+		if(repo.findAll().isEmpty()) {
+			throw new EntityNotFoundException("Nessun cliente in archivio");
+		} else return (repo.findAllOrderBynameDesc());
+	}
+	
 
 	public Cliente findById(Long id) {
 		if (!repo.existsById(id)) {
