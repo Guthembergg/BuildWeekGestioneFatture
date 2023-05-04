@@ -3,6 +3,7 @@ package com.spring_security_project.service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.spring_security_project.model.Comune;
 import com.spring_security_project.model.Provincia;
 import com.spring_security_project.read_CSV.CSVHelper;
@@ -42,10 +45,10 @@ public class ComuneService {
 		repo.save(comune);
 		return "Comune aggiunta";
 	}
-	public void saveCSV() throws IOException {
+	public void saveCSV(MultipartFile file) throws IOException {
 		  
 
-			BufferedReader fileReader = new BufferedReader(new FileReader("comuni-italiani-edit.csv"));
+			BufferedReader fileReader = new BufferedReader(new InputStreamReader(file.getInputStream(), "UTF-8"));
 
 					CSVParser csvParser = new CSVParser(fileReader, CSVFormat.newFormat(';').withFirstRecordAsHeader()
 							.withIgnoreHeaderCase().withTrim().withAllowMissingColumnNames());

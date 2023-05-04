@@ -40,10 +40,10 @@ public class CSVHelper {
 		return true;
 	}
 
-	public static List<Provincia> csvToProvincia() {// InputStream is
+	public static List<Provincia> csvToProvincia(InputStream is) {// InputStream is
 		try // (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is,
 			// "UTF-8"));
-		(BufferedReader fileReader = new BufferedReader(new FileReader("province-italiane-id2.csv"));
+		(BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
 				CSVParser csvParser = new CSVParser(fileReader, CSVFormat.newFormat(';').withFirstRecordAsHeader()
 						.withIgnoreHeaderCase().withTrim().withAllowMissingColumnNames());) {
@@ -67,10 +67,10 @@ public class CSVHelper {
 		}
 	}
 
-	public static List<Comune> csvToComune() {// InputStream is
+	public static List<Comune> csvToComune(InputStream is) {// InputStream is
 		try // (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is,
 			// "UTF-8"));
-		(BufferedReader fileReader = new BufferedReader(new FileReader("comuni-italiani-edit.csv"));
+		(BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
 				CSVParser csvParser = new CSVParser(fileReader, CSVFormat.newFormat(';').withFirstRecordAsHeader()
 						.withIgnoreHeaderCase().withTrim().withAllowMissingColumnNames());) {
