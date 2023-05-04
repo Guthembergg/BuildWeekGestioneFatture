@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.StatoFattura;
+import com.spring_security_project.repository.FatturaRepository;
 import com.spring_security_project.service.FatturaService;
 
 @RestController
@@ -25,9 +26,13 @@ import com.spring_security_project.service.FatturaService;
 public class FatturaController {
 	
 @Autowired FatturaService service;
+@Autowired FatturaRepository fatturaRepo;
 	
 	@PostMapping
 	public ResponseEntity<?> registraFattura(@RequestBody Fattura f){
+		if(fatturaRepo.existsByNumero(f.getNumero())) {
+			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
+		} 
 		try {
 			return new ResponseEntity<String>(service.addFattura(f), HttpStatus.CREATED);			
 		} catch(Exception e) {
@@ -40,7 +45,7 @@ public class FatturaController {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/trovaPerId/{id}")
 	public ResponseEntity<?> trovaFattura(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
@@ -50,7 +55,7 @@ public class FatturaController {
 	}
 	
 	//ritorna lista di fatture associate a un cliente
-	@GetMapping("/cliente/{id}")
+	@GetMapping("/trovaPerCliente/{id}")
 	public ResponseEntity<?>findByCliente(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findByCliente(id), HttpStatus.OK);
@@ -62,7 +67,7 @@ public class FatturaController {
 	
 	
 	//ritorna lista di fatture con uno stato specifico
-		@GetMapping("/lista/{stato}")
+		@GetMapping("/listaPerStato/{stato}")
 		public ResponseEntity<?>findByStato(@PathVariable StatoFattura stato){
 			try {
 				return new ResponseEntity<>(service.findByStatoFattura(stato), HttpStatus.OK);
@@ -73,7 +78,7 @@ public class FatturaController {
 		}
 		
 	//ritorna lista di fatture emessa in una data specifica
-			@GetMapping("/lista/data{data}")
+			@GetMapping("/listaPerData/{data}")
 			public ResponseEntity<?>findByData(@PathVariable Date data){
 				try {
 					return new ResponseEntity<>(service.findByData(data), HttpStatus.OK);
@@ -84,7 +89,7 @@ public class FatturaController {
 			}
 				
 	//ritorna lista di fatture emesse in un anno
-		@GetMapping("/lista/{anno}")
+		@GetMapping("/listaFattureAnnue/{anno}")
 		public ResponseEntity<?>findByAnno(@PathVariable Integer anno){
 			try {
 				return new ResponseEntity<>(service.findByAnno(anno), HttpStatus.OK);
@@ -95,7 +100,7 @@ public class FatturaController {
 		}
 		
 		//ritorna lista di fatture con importo compreso tra {importoIniziale} e {importoFinale}
-				@GetMapping("/lista/importi/{importoIniziale}/{importoFinale}")
+				@GetMapping("/lista/importi/iniziale_{importoIniziale}/finale_{importoFinale}")
 				public ResponseEntity<?>findByImportoBetween(@PathVariable Double importoIniziale, @PathVariable Double importoFinale){
 					try {
 						return new ResponseEntity<>(service.findByImportoBetween(importoIniziale, importoFinale), HttpStatus.OK);
@@ -106,7 +111,14 @@ public class FatturaController {
 				}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> registraFattura(@RequestBody Fattura c, @PathVariable Long id){
+	public ResponseEntity<?> modificaFattura(@RequestBody Fattura c, @PathVariable Long id){
+		if(fatturaRepo.existsByNumero(c.getNumero())) {
+			return new ResponseEntity<>(" Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
+		} 
+		c.setId(id);
+		if(c.getCliente() == null || service.findById(id).getCliente() != null) {
+			c.setCliente(service.findById(id).getCliente());
+		}
 		try {return new ResponseEntity<Fattura>(service.editFattura(c), HttpStatus.CREATED);
 			
 		} catch (Exception e) {
@@ -114,7 +126,7 @@ public class FatturaController {
 		}		 
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/elimina/{id}")
 	public ResponseEntity<?> eliminaFattura(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.deleteFatturaById(id), HttpStatus.OK);
