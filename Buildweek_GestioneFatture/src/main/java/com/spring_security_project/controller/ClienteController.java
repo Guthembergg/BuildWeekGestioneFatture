@@ -26,6 +26,8 @@ public class ClienteController {
 	@Autowired ClienteService service;
 	@Autowired FatturaService fatturaServ;
 	
+	// FORSE AGGIUNGERE ASSOCIA SEDE OPERATIVA CLIENTE
+	
 	@PostMapping
 	public ResponseEntity<?> registraCliente(@RequestBody Cliente c){
 		try {
@@ -40,29 +42,6 @@ public class ClienteController {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 	
-	
-	//ritorna lista con paginazione
-		@GetMapping("/paginazione")
-		public ResponseEntity<?> recuperaClientiPageable(Pageable pageable){
-			try {
-				return new ResponseEntity<>(service.getAllClientePageable(pageable), HttpStatus.FOUND);
-			} catch (Exception e) {
-				return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
-			}		
-		}
-		
-		//ritorna lista ordinata per nome
-			@GetMapping("/paginazione/nomi")
-			public ResponseEntity<?> recuperaClientiPageableName(Pageable pageable){
-				try {
-					return new ResponseEntity<>(service.getAllClientePageableByName(), HttpStatus.FOUND);
-				} catch (Exception e) {
-					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
-				}		
-			}
-		
-	
-	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> trovaCliente(@PathVariable Long id){
 		try {
@@ -75,6 +54,7 @@ public class ClienteController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> registraCliente(@RequestBody Cliente c, @PathVariable Long id){
+		c.setId(id);
 		try {return new ResponseEntity<Cliente>(service.editCliente(c), HttpStatus.CREATED);
 			
 		} catch (Exception e) {
