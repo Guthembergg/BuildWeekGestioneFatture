@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -37,10 +41,22 @@ public class Fattura {
 	private Double importo; 
 	@Column(nullable = false, unique = true)
 	private Integer numero; 
+	
+	public Fattura(Integer anno, Date data, Double importo, Integer numero, StatoFattura statoFattura,
+			Cliente cliente) {
+		super();
+		this.anno = anno;
+		this.data = data;
+		this.importo = importo;
+		this.numero = numero;
+		this.statoFattura = statoFattura;
+		this.cliente = cliente;
+	}
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private StatoFattura statoFattura;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
+	@JsonIgnore
 	private Cliente cliente;
 	
 }

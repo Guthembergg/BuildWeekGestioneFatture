@@ -19,5 +19,5 @@ public class RegisterDto {
     private String email;
     private String password;
  // Per registrare tutti come USER di Default commentare roles
-    private Set<String> roles;
+    //private Set<String> roles;
 }
