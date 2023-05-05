@@ -19,12 +19,14 @@ import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.StatoFattura;
 import com.spring_security_project.repository.FatturaRepository;
+import com.spring_security_project.service.ClienteService;
 import com.spring_security_project.service.FatturaService;
 
 @RestController
 @RequestMapping("/fatture")
 public class FatturaController {
 	
+@Autowired ClienteService clienteServ;
 @Autowired FatturaService service;
 @Autowired FatturaRepository fatturaRepo;
 	
@@ -58,7 +60,7 @@ public class FatturaController {
 	@GetMapping("/trovaPerCliente/{id}")
 	public ResponseEntity<?>findByCliente(@PathVariable Long id){
 		try {
-			return new ResponseEntity<>(service.findByCliente(id), HttpStatus.OK);
+			return new ResponseEntity<>(service.findByCliente(clienteServ.findById(id)), HttpStatus.OK);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
@@ -78,8 +80,10 @@ public class FatturaController {
 		}
 		
 	//ritorna lista di fatture emessa in una data specifica
-			@GetMapping("/listaPerData/{data}")
-			public ResponseEntity<?>findByData(@PathVariable Date data){
+			@GetMapping("/listaPerData/{anno}/{mese}/{giorno}")
+			public ResponseEntity<?>findByData(@PathVariable Integer anno, @PathVariable Integer mese, @PathVariable Integer giorno){
+				
+				Date data = new Date(anno, mese, giorno);
 				try {
 					return new ResponseEntity<>(service.findByData(data), HttpStatus.OK);
 				} catch (Exception e) {

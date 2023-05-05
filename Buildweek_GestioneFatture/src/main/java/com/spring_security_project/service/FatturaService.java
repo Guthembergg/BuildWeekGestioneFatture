@@ -32,14 +32,17 @@ public class FatturaService {
 		if(!repo.existsById(id)) {
 			throw new EntityNotFoundException("Nessuna Fattura associata a questo ID");
 		}
-		return repo.findById(id).get();
+		Fattura f = repo.findById(id).get();
+//		Date data = new Date(f.getData().getYear() + 1900, f.getData().getMonth(), f.getData().getDate());
+//		f.setData(data);
+		return f;
 	}
 	
-	public List<Fattura> findByCliente(Long id){
-		if(!repoCliente.existsById(id)) {
+	public List<Fattura> findByCliente(Cliente c){
+		if(!repoCliente.existsById(c.getId())) {
 			throw new EntityNotFoundException("Nessun cliente trovato");
 		}
-		return repo.findByCliente(id);
+		else return repo.findByCliente(c);
 	}
 	
 	public List<Fattura> findByStatoFattura(StatoFattura statoFattura){		
@@ -60,7 +63,11 @@ public class FatturaService {
 	
 	public String addFattura(Fattura fattura) {
 	
+//		Date date = new Date(fattura.getData().getYear()-1900, fattura.getData().getMonth(), fattura.getData().getDate());
+//		//System.out.println(fattura.getData().getDate());
+//		fattura.setData(date);
 		repo.save(fattura);
+		
 		return "Fattura aggiunta";
 	}
 	
@@ -81,7 +88,7 @@ public class FatturaService {
 	public String associaFatturaCliente(Fattura f, Cliente c) {
 		if(repoCliente.existsById(c.getId())) {
 			f.setCliente(c);
-			c.getListaFatture().add(f);
+			c.getListaFatture().add(f);			
 			repo.save(f);	
 			repoCliente.save(c);
 			return "Fattura associata";
@@ -96,6 +103,7 @@ public class FatturaService {
 			Fattura f = repo.findById(id).get();
 			Cliente c = repoCliente.findById(idCliente).get();
 			c.getListaFatture().add(f);
+			f.setCliente(c);
 			repo.save(f);
 			repoCliente.save(c);
 			return "Fattura associata";

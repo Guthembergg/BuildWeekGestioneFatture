@@ -28,8 +28,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long>, PagingA
 	 @Query("SELECT c FROM Cliente c ORDER BY c.sedeLegale.comune.nome_provincia ASC")
 	 List<Cliente> findAllOrderByProvincia();
 	 
-	// List<Cliente> findByOrderByNome_provincia();
-	 
 	 @Query("SELECT c FROM Cliente c WHERE c.nomeContatto LIKE %:parte_del_nome%")
 	    List<Cliente> findByParteDelNome(String parte_del_nome);
 	 

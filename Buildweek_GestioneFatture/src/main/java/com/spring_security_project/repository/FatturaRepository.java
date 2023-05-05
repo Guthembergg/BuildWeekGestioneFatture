@@ -5,12 +5,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.spring_security_project.model.Cliente;
 import com.spring_security_project.model.Fattura;
 import com.spring_security_project.model.StatoFattura;
 
 public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	
-	public List<Fattura> findByCliente(Long id);
+	public List<Fattura> findByCliente(Cliente c);
 	
 	public List<Fattura> findByStatoFattura(StatoFattura statoFattura);
 
