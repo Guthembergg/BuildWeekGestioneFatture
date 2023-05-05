@@ -3,6 +3,7 @@ package com.spring_security_project.runner;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,8 @@ public class Runner implements ApplicationRunner {
 //		com.setCodice_provincia(p);
 		// comuneServ.addComune(com);
 		//System.out.println(com);
+		Comune comune = comuneServ.findById(1l);
+		System.out.println(comune.getDenominazione());
 		
 		// METODI PROVINCIA
 		// problema: id da assegnare manualmente(per import excel)
@@ -74,16 +77,31 @@ public class Runner implements ApplicationRunner {
 //		Indirizzo iLetto = indirizzoServ.findById(6l);
 //		System.out.println(iLetto);
 	//	indirizzoServ.deleteIndirizzoById(6l);
+		Indirizzo ind = indirizzo.getObject();
+		Indirizzo ind2 = indirizzo.getObject();
+		ind.setComune(comune);
+		ind2.setComune(comune);
+		
 		
 		// METODI CLIENTE
 		//Cliente cl = cliente.getObject();
 //		System.out.println(cl);
-		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, null,null);
+//		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, ind,ind2);
+		List<Fattura> lista = new ArrayList<>();		
 //		System.out.println(cl);
 	//clienteServ.addCliente(cl2);
 	
-		//Fattura f = new Fattura(1l, 2023, new Date(2022, 03, 12), 193.94, 1, StatoFattura.EMESSA, null );
-	//	fatturaServ.addFattura(f);
+		// FATTURE
+		Fattura f = new Fattura(2023, new Date(2022, 03, 12), 193.94, 2, StatoFattura.EMESSA, null );
+		//fatturaServ.addFattura(f);
+		
+		lista.add(f);
+		Cliente clFatture = new Cliente("GV_SPA", "138539135", "g@example.it", LocalDate.now(), LocalDate.now(), 13242, "pecdig@aruba.sos", "091 44455349", "pecdg@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, indirizzoServ.findById(1l), indirizzoServ.findById(2l), lista);
+		clienteServ.addCliente(clFatture);
+		//f.setCliente(cl2);
+		//fatturaServ.addFattura(f);
+//		cl2.getListaFatture().add(f);
+//		clienteServ.editCliente(cl2);
 		
 	//	Cliente cLetto = clienteServ.findById(1l);
 //		Fattura f2 = new Fattura(2l, 2023, new Date(2022, 03, 12), 142.94, 1, StatoFattura.EMESSA, null );

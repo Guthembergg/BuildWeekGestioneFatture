@@ -62,7 +62,7 @@ public class Cliente {
 	private Indirizzo sedeLegale;
 	@OneToOne(cascade = CascadeType.MERGE)
 	private Indirizzo sedeOperativa;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente", cascade = CascadeType.MERGE)
 	@JsonIgnoreProperties
 	private List<Fattura> listaFatture = new ArrayList<>();
 	
@@ -109,6 +109,7 @@ public class Cliente {
 		this.tipoCliente = tipoCliente;
 	}
 
+	
 	public Cliente(String ragioneSociale, String partitaIva, String email, LocalDate dataInserimento,
 			LocalDate dataUltimoContatto, Integer fatturatoAnnuale, String pec, String telefono, String emailContatto,
 			String nomeContatto, String cognomeContatto, String telefonoContatto, TipoCliente tipoCliente,
@@ -146,9 +147,30 @@ public class Cliente {
 		this.telefonoContatto = telefonoContatto;
 	}
 
+	public Cliente(String ragioneSociale, String partitaIva, String email, LocalDate dataInserimento,
+			LocalDate dataUltimoContatto, Integer fatturatoAnnuale, String pec, String telefono, String emailContatto,
+			String nomeContatto, String cognomeContatto, String telefonoContatto, TipoCliente tipoCliente,
+			Indirizzo sedeLegale, Indirizzo sedeOperativa, List<Fattura> listaFatture) {
+		super();
+		this.ragioneSociale = ragioneSociale;
+		this.partitaIva = partitaIva;
+		this.email = email;
+		this.dataInserimento = dataInserimento;
+		this.dataUltimoContatto = dataUltimoContatto;
+		this.fatturatoAnnuale = fatturatoAnnuale;
+		this.pec = pec;
+		this.telefono = telefono;
+		this.emailContatto = emailContatto;
+		this.nomeContatto = nomeContatto;
+		this.cognomeContatto = cognomeContatto;
+		this.telefonoContatto = telefonoContatto;
+		this.tipoCliente = tipoCliente;
+		this.sedeLegale = sedeLegale;
+		this.sedeOperativa = sedeOperativa;
+		this.listaFatture = listaFatture;
+		this.listaFatture.forEach(f -> f.setCliente(this));
+	}
 
-
-	
 	
 
 }

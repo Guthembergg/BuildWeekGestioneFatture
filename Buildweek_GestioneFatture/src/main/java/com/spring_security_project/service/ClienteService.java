@@ -66,6 +66,12 @@ public class ClienteService {
 		} else return (repo.findAllOrderByProvincia());
 	}
 	
+//	public List<Cliente> orderAllClienteByProvincia(){
+//		if(repo.findAll().isEmpty()) {
+//			throw new EntityNotFoundException("Nessun cliente in archivio");
+//		} else return (repo.findByOrderByNome_provincia());
+//	}
+	
 
 	public Cliente findById(Long id) {
 		if (!repo.existsById(id)) {

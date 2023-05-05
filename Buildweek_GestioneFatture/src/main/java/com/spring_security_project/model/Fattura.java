@@ -41,6 +41,17 @@ public class Fattura {
 	private Double importo; 
 	@Column(nullable = false, unique = true)
 	private Integer numero; 
+	
+	public Fattura(Integer anno, Date data, Double importo, Integer numero, StatoFattura statoFattura,
+			Cliente cliente) {
+		super();
+		this.anno = anno;
+		this.data = data;
+		this.importo = importo;
+		this.numero = numero;
+		this.statoFattura = statoFattura;
+		this.cliente = cliente;
+	}
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private StatoFattura statoFattura;

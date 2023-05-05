@@ -87,7 +87,7 @@ public class ClienteController {
 			
 			//ritorna lista ordinata per data ultimo contatto (NON PAGINATO)
 			@GetMapping("/paginazione/data_ult")
-			public ResponseEntity<?> recuperaClientiPageableDataUltCont(Pageable pageable){
+			public ResponseEntity<?> recuperaClientiPageableDataUltCont(){
 				try {
 					return new ResponseEntity<>(service.getAllClientePageableByDataUltimoContatto(), HttpStatus.FOUND);
 				} catch (Exception e) {
@@ -97,7 +97,7 @@ public class ClienteController {
 			
 			//ritorna lista ordinata per provincia (DA SISTEMARE)
 			@GetMapping("/paginazione/prov")
-			public ResponseEntity<?> recuperaClientiPageableProvincia(Pageable pageable){
+			public ResponseEntity<?> recuperaClientiPageableProvincia(){
 				try {
 					return new ResponseEntity<>(service.getAllClientePageableByProvincia(), HttpStatus.FOUND);
 				} catch (Exception e) {
@@ -167,13 +167,13 @@ public class ClienteController {
 		}
 	}
 	
-	@PutMapping("/associaFattura/{id}")
-	public ResponseEntity<?> associaFatturaAClienteEsistente(@RequestBody Fattura f, @PathVariable Long id){
+	@PutMapping("/associaFattura/{idCliente}")
+	public ResponseEntity<?> associaFatturaAClienteEsistente(@RequestBody Fattura f, @PathVariable Long idCliente){
 		if(fatturaRepo.existsByNumero(f.getNumero())) {
 			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
 		} 
 		
-		try {return new ResponseEntity<String>(fatturaServ.associaFatturaCliente(f, service.findById(id)), HttpStatus.OK);
+		try {return new ResponseEntity<String>(fatturaServ.associaFatturaCliente(f, service.findById(idCliente)), HttpStatus.OK);
 			
 		} catch (Exception e) {
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
@@ -183,11 +183,7 @@ public class ClienteController {
 	
 	@PutMapping("/associa/{idCliente}/{idFattura}")
 	public ResponseEntity<?> associaFatturaEsistenteAClienteEsistente(@PathVariable Long idCliente,@PathVariable Long idFattura){
-		
-		if(fatturaRepo.existsByNumero(fatturaServ.findById(idFattura).getNumero())) {
-			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
-		} 
-		
+		 		
 		try {return new ResponseEntity<String>(fatturaServ.associaFatturaEsistente(idCliente, idFattura), HttpStatus.OK);
 			
 		} catch (Exception e) {
