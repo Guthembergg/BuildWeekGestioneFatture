@@ -13,9 +13,11 @@ import org.springframework.stereotype.Component;
 
 import com.spring_security_project.auth.entity.ERole;
 import com.spring_security_project.auth.entity.Role;
+import com.spring_security_project.auth.entity.User;
 import com.spring_security_project.auth.repository.RoleRepository;
 import com.spring_security_project.auth.repository.UserRepository;
 import com.spring_security_project.auth.service.AuthService;
+import com.spring_security_project.auth.service.AuthServiceImpl;
 
 
 @Component
@@ -26,6 +28,8 @@ public class AuthRunner implements ApplicationRunner {
 	@Autowired PasswordEncoder passwordEncoder;
 	@Autowired AuthService authService;
 	
+	@Autowired AuthServiceImpl authImp;
+	
 	private Set<Role> adminRole;
 	private Set<Role> moderatorRole;
 	private Set<Role> userRole;
@@ -35,6 +39,17 @@ public class AuthRunner implements ApplicationRunner {
 		System.out.println("Run...");
 		if(roleRepository.findAll().size() == 0) {
 			setRoleDefault();			
+		}
+		
+		if(userRepository.findAll().size() == 0) {
+			User user = new User();
+			user.setUsername("mario");
+			user.setPassword(passwordEncoder.encode("qwerty"));
+			user.setEmail("mario@example.com");
+			user.setName("Mario");
+			Role admin = roleRepository.findById(1l).get();			
+			user.getRoles().add(admin);
+			userRepository.save(user);
 		}
 	}
 	

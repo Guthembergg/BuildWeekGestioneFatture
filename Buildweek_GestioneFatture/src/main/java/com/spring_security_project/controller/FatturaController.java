@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ public class FatturaController {
 @Autowired FatturaRepository fatturaRepo;
 	
 	@PostMapping
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> registraFattura(@RequestBody Fattura f){
 		if(fatturaRepo.existsByNumero(f.getNumero())) {
 			return new ResponseEntity<>("Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
@@ -43,11 +45,13 @@ public class FatturaController {
 	}
 	
 	@GetMapping("/lista")
+	@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 	public ResponseEntity<?> recuperaFattura(){
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/trovaPerId/{id}")
+	@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 	public ResponseEntity<?> trovaFattura(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
@@ -58,6 +62,7 @@ public class FatturaController {
 	
 	//ritorna lista di fatture associate a un cliente
 	@GetMapping("/trovaPerCliente/{id}")
+	@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 	public ResponseEntity<?>findByCliente(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findByCliente(clienteServ.findById(id)), HttpStatus.OK);
@@ -70,6 +75,7 @@ public class FatturaController {
 	
 	//ritorna lista di fatture con uno stato specifico
 		@GetMapping("/listaPerStato/{stato}")
+		@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 		public ResponseEntity<?>findByStato(@PathVariable StatoFattura stato){
 			try {
 				return new ResponseEntity<>(service.findByStatoFattura(stato), HttpStatus.OK);
@@ -81,6 +87,7 @@ public class FatturaController {
 		
 	//ritorna lista di fatture emessa in una data specifica
 			@GetMapping("/listaPerData/{anno}/{mese}/{giorno}")
+			@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 			public ResponseEntity<?>findByData(@PathVariable Integer anno, @PathVariable Integer mese, @PathVariable Integer giorno){
 				
 				Date data = new Date(anno, mese, giorno);
@@ -94,6 +101,7 @@ public class FatturaController {
 				
 	//ritorna lista di fatture emesse in un anno
 		@GetMapping("/listaFattureAnnue/{anno}")
+		@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 		public ResponseEntity<?>findByAnno(@PathVariable Integer anno){
 			try {
 				return new ResponseEntity<>(service.findByAnno(anno), HttpStatus.OK);
@@ -105,6 +113,7 @@ public class FatturaController {
 		
 		//ritorna lista di fatture con importo compreso tra {importoIniziale} e {importoFinale}
 				@GetMapping("/lista/importi/{importoIniziale}/{importoFinale}")
+				@PreAuthorize("hasRole('USER')or hasRole('ADMIN')")
 				public ResponseEntity<?>findByImportoBetween(@PathVariable Integer importoIniziale, @PathVariable Integer importoFinale){
 					Double dIniz =  importoIniziale.doubleValue();
 					Double dFin =  importoFinale.doubleValue();
@@ -117,6 +126,7 @@ public class FatturaController {
 				}
 	
 	@PutMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> modificaFattura(@RequestBody Fattura c, @PathVariable Long id){
 		if(fatturaRepo.existsByNumero(c.getNumero())) {
 			return new ResponseEntity<>(" Numero fattura già esistente, inseriscine uno diverso", HttpStatus.FOUND);
@@ -133,6 +143,7 @@ public class FatturaController {
 	}
 	
 	@DeleteMapping("/elimina/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> eliminaFattura(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.deleteFatturaById(id), HttpStatus.OK);

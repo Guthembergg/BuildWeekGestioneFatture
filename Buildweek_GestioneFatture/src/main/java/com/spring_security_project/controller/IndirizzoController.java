@@ -24,8 +24,8 @@ public class IndirizzoController {
 	@Autowired IndirizzoService service;
 	@Autowired ClienteService clienteServ;
 	
-	@PreAuthorize("hasRole('USER')")
 	@PostMapping
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> registraIndirizzo(@RequestBody Indirizzo i){
 		try {
 			return new ResponseEntity<String>(service.addIndirizzo(i), HttpStatus.CREATED);			
@@ -35,11 +35,13 @@ public class IndirizzoController {
 	}
 	
 	@GetMapping("/lista")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<?> recuperaIndirizzo(){
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/trovaPerId/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<?> trovaIndirizzo(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
@@ -49,6 +51,7 @@ public class IndirizzoController {
 	}
 	
 	@PutMapping("/modifica/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> modificaIndirizzo(@RequestBody Indirizzo c, @PathVariable Long id){
 		c.setId(id);
 		try {return new ResponseEntity<Indirizzo>(service.editIndirizzo(c), HttpStatus.CREATED);
@@ -59,15 +62,17 @@ public class IndirizzoController {
 	}
 	
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> eliminaIndirizzo(@PathVariable Long id){
 		try {
 			return new ResponseEntity<>(service.deleteIndirizzoById(id), HttpStatus.OK);
 		} catch(Exception e) {
-			return new ResponseEntity<String>(e.getMessage(), HttpStatus.FOUND);
+			return new ResponseEntity<String>("L'indirizzo risulta già associato a un cliente", HttpStatus.FOUND);
 		}
 	}
 	
 	@PutMapping("/associaComune/{idIndirizzo}/{idComune}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> associaIndirizzoAComune(@PathVariable Long idIndirizzo,@PathVariable Long idComune){
 		try {return new ResponseEntity<String>(service.associaComuneEsistente(idIndirizzo, idComune), HttpStatus.OK);
 			
@@ -77,6 +82,7 @@ public class IndirizzoController {
 	}
 	
 	@PutMapping("/associaIndirizzoUtente/{idIndirizzo}/{idCliente}/{type}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> associaIndirizzoAUtente(@PathVariable Long idIndirizzo, @PathVariable Long idCliente, @PathVariable String type){	
 			try {
 				return new ResponseEntity<String>(clienteServ.associaIndirizzoEsistente(idCliente, idIndirizzo,  type), HttpStatus.OK);

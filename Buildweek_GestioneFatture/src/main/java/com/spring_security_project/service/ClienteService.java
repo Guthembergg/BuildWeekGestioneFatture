@@ -103,7 +103,7 @@ public class ClienteService {
 
 	public String addCliente(Cliente cliente) {
 		if (repo.existsByEmail(cliente.getEmail())) {
-			throw new EntityExistsException("Esiste già un cliente con questo id");
+			throw new EntityExistsException("Esiste già un cliente con questa email");
 		}
 		repo.save(cliente);
 		return "Cliente aggiunto";

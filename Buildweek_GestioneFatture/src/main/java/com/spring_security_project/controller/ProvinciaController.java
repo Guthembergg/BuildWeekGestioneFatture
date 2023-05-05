@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,7 @@ public class ProvinciaController {
 		}
 	}
 	
-	@PostMapping("/upload")
+	@PostMapping("/upload")	
 	  public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
 	    String message = "";
 
