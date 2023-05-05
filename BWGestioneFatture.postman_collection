@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a4e897ba-2ad5-4089-8be8-e93caf06ec2f",
+		"_postman_id": "653a07b5-1c17-4396-bea3-9082ba8df7eb",
 		"name": "BW",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "25909509"
+		"_exporter_id": "25789399"
 	},
 	"item": [
 		{
@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Mario\",\r\n    \"username\": \"Rossinone\",\r\n    \"email\": \"mariano.rossinone.mr@ex.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"raw": "{\r\n    \"name\": \"123\",\r\n    \"username\": \"123\",\r\n    \"email\": \"123@ex.com\",\r\n    \"password\": \"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Rossinone\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"raw": "{\r\n    \"username\": \"123\",\r\n    \"password\": \"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +102,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "/C:/Users/cloud/eclipse-workspace/BuildWeekGestioneFatture/Buildweek_GestioneFatture/province-italiane-id2.csv"
+							"src": "/C:/Users/Fedanto/eclipse-workspace/EPICODE/BuildWeekGestioneFatture/Buildweek_GestioneFatture/province-italiane-id2.csv"
 						}
 					]
 				},
@@ -115,6 +115,13 @@
 					"path": [
 						"province",
 						"upload"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -131,7 +138,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "/C:/Users/cloud/eclipse-workspace/BuildWeekGestioneFatture/Buildweek_GestioneFatture/comuni-italiani-edit.csv"
+							"src": "/C:/Users/Fedanto/eclipse-workspace/EPICODE/BuildWeekGestioneFatture/Buildweek_GestioneFatture/comuni-italiani-edit.csv"
 						}
 					]
 				},
@@ -155,6 +162,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -186,6 +203,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -232,6 +259,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -281,6 +318,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -330,6 +377,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -379,6 +436,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -423,11 +490,21 @@
 			"response": []
 		},
 		{
-			"name": "OrdinaClientiPerProvincia(f)",
+			"name": "OrdinaClientiPerProvincia",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -477,6 +554,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -489,7 +576,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/clienti/paginazione/cercaPerParteNome/War",
+					"raw": "localhost:8080/clienti/paginazione/cercaPerParteNome/Wa",
 					"host": [
 						"localhost"
 					],
@@ -498,7 +585,7 @@
 						"clienti",
 						"paginazione",
 						"cercaPerParteNome",
-						"War"
+						"Wa"
 					],
 					"query": [
 						{
@@ -527,6 +614,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -576,6 +673,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -625,6 +732,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -654,11 +771,21 @@
 		{
 			"name": "RegClienteConSedeLegaleEsistente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"ufeadewwefafeafeawhif\",\r\n        \"partitaIva\": \"fwaffwfwafeaewdewaf\",\r\n        \"email\": \"mafawdfwawafwaffew@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9921349,\r\n        \"pec\": \"pecdiwafemafwaffwafweadwerio@fewa.sos\",\r\n        \"telefono\": \"091 444233fwafwafwafw24455559\",\r\n        \"emailContatto\": \"pecddwefwfwafweaaimewafario@arubawea.sos\",\r\n        \"nomeContatto\": \"proeadweffwawfawaawdva\",\r\n        \"cognomeContatto\": \"prodwwwfweawfwaaeavewaa2\",\r\n        \"telefonoContatto\": \"90835ffweawfawa23532302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n              \"id\": 16,\r\n        \"via\": \"dwa\",\r\n        \"civico\": 187,\r\n        \"localita\": \"Belize\",\r\n        \"cap\": 65860\r\n        }\r\n    }\r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"ufeaefafeafeawhif\",\r\n        \"partitaIva\": \"fwaffffeaewdewaf\",\r\n        \"email\": \"mafawdwawafffew@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 9921349,\r\n        \"pec\": \"pecdiwfemafwaffwafweadwerio@fewa.sos\",\r\n        \"telefono\": \"091 444233fafwafwafw24455559\",\r\n        \"emailContatto\": \"pecdwefwfwafweaaewafario@arubawea.sos\",\r\n        \"nomeContatto\": \"proeeffwawfawaawdva\",\r\n        \"cognomeContatto\": \"powwwfweawfwaaeavewaa2\",\r\n        \"telefonoContatto\": \"90835ffeawfawa23532302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n              \"id\": 16,\r\n        \"via\": \"dwa\",\r\n        \"civico\": 187,\r\n        \"localita\": \"Belize\",\r\n        \"cap\": 65860\r\n        }\r\n    }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -698,11 +825,21 @@
 		{
 			"name": "RegClienteSedeLegaleEOperativaEsistenti",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"WarioMario_PA\",\r\n        \"partitaIva\": \"P.IVA342895302221\",\r\n        \"email\": \"wario.mario@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 99924,\r\n        \"pec\": \"pecdilwariomario@aruba.ex\",\r\n        \"telefono\": \"091 23524559\",\r\n        \"emailContatto\": \"pecdiwario@aruba.sos\",\r\n        \"nomeContatto\": \"Wario\",\r\n        \"cognomeContatto\": \"Mario\",\r\n        \"telefonoContatto\": \"091 2352239\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\" : 16,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"id\" : 16,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"WarioMario_PA3\",\r\n        \"partitaIva\": \"P.IVA3428219675302221\",\r\n        \"email\": \"wario3.mario2@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 99924,\r\n        \"pec\": \"pecdilwa3ri23omario@aruba.ex\",\r\n        \"telefono\": \"091 235324r4559\",\r\n        \"emailContatto\": \"pec3d23iwario@aruba.sos\",\r\n        \"nomeContatto\": \"War3i2o\",\r\n        \"cognomeContatto\": \"3Mario2\",\r\n        \"telefonoContatto\": \"091 22wq32352239\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\" : 16,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"id\" : 16,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -742,11 +879,21 @@
 		{
 			"name": "RegistraClienteNoIndirizzi",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"Sonic_PA\",\r\n        \"partitaIva\": \"P.IVA342893121\",\r\n        \"email\": \"sonic.edgehog@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 924,\r\n        \"pec\": \"pecdilsonico@aruba.ex\",\r\n        \"telefono\": \"091 29683229\",\r\n        \"emailContatto\": \"pecdisonic@aruba.sos\",\r\n        \"nomeContatto\": \"Sonic\",\r\n        \"cognomeContatto\": \"Sonic\",\r\n        \"telefonoContatto\": \"091 231239\",\r\n        \"tipoCliente\": \"PA\"\r\n    }\r\n   \r\n",
+					"raw": "  {\r\n        \"ragioneSociale\": \"Sonic_PA22\",\r\n        \"partitaIva\": \"P.IVA342822931221\",\r\n        \"email\": \"soni2c.edgehog2@ex.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 924,\r\n        \"pec\": \"pecdilsonico@ar2uba2.ex\",\r\n        \"telefono\": \"091 2968322292\",\r\n        \"emailContatto\": \"pecdis2onic@aruba2.sos\",\r\n        \"nomeContatto\": \"Sonic22\",\r\n        \"cognomeContatto\": \"Sonic32\",\r\n        \"telefonoContatto\": \"091 2313232r2239\",\r\n        \"tipoCliente\": \"PA\"\r\n    }\r\n   \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -786,11 +933,21 @@
 		{
 			"name": "ModificaCliente(creaIndirizziSeNonSpecificoGliID)",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"ragioneSociale\": \"MarioRowad4rwcsfessi_PA\",\r\n        \"partitaIva\": \"1385dfwafwadw4r3ceq39853\",\r\n        \"email\": \"mario@exampwfwawadrefa3qewale.it\",\r\n        \"dataInserimento\": \"2023-05-04\",\r\n        \"dataUltimoContatto\": \"2023-05-04\",\r\n        \"fatturatoAnnuale\": 99999,\r\n        \"pec\": \"pecdimaridwafwawadfawedwawafo@aruba.sos\",\r\n        \"telefono\": \"091 4445fwa5dwfwdwaaadwe559\",\r\n        \"emailContatto\": \"pecdifwamfawawadwawrio@aruba.sos\",\r\n        \"nomeContatto\": \"prdwadafwafwfeaawova\",\r\n        \"cognomeContatto\": \"prdwafwafwfwaadwaova2\",\r\n        \"telefonoContatto\": \"908dfawwfwaadwafwa302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 15,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"id\" : 14,\r\n            \"via\": \"Via Lauro 5\",\r\n            \"civico\": 58,\r\n            \"localita\": \"Antigua e Barbuda\",\r\n            \"cap\": 12363,\r\n            \"comune\": null\r\n        }\r\n    }\r\n   \r\n",
+					"raw": "{\r\n        \"ragioneSociale\": \"GV_SPA1111\",\r\n        \"partitaIva\": \"138521239135\",\r\n        \"email\": \"g@example.it\",\r\n        \"dataInserimento\": \"2023-05-05\",\r\n        \"dataUltimoContatto\": \"2023-05-05\",\r\n        \"fatturatoAnnuale\": 13242,\r\n        \"pec\": \"pecdig@aruba.sos\",\r\n        \"telefono\": \"091 44455349\",\r\n        \"emailContatto\": \"pecdg@aruba.sos\",\r\n        \"nomeContatto\": \"prova\",\r\n        \"cognomeContatto\": \"prova2\",\r\n        \"telefonoContatto\": \"908302\",\r\n        \"tipoCliente\": \"PA\",\r\n        \"sedeLegale\": {\r\n            \"id\": 1,\r\n            \"via\": \"Via Ferretti 16\",\r\n            \"civico\": 166,\r\n            \"localita\": \"Zambia\",\r\n            \"cap\": 80531\r\n        },\r\n        \"sedeOperativa\": {\r\n            \"id\": 2,\r\n            \"via\": \"Strada Miriam 85\",\r\n            \"civico\": 178,\r\n            \"localita\": \"Guinea-Bissau\",\r\n            \"cap\": 89345\r\n        },\r\n        \"listaFatture\": []\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -798,14 +955,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/clienti/4",
+					"raw": "localhost:8080/clienti/modifica/3",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"clienti",
-						"4"
+						"modifica",
+						"3"
 					],
 					"query": [
 						{
@@ -831,6 +989,16 @@
 		{
 			"name": "EliminaCliente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"body": {
@@ -843,14 +1011,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/clienti/17",
+					"raw": "localhost:8080/clienti/elimina/12",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"clienti",
-						"17"
+						"elimina",
+						"12"
 					],
 					"query": [
 						{
@@ -879,6 +1048,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -912,7 +1091,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpYW5vLnJvc3Npbm9uZS5tckBleC5jb20iLCJpYXQiOjE2ODMyMzM0MjcsImV4cCI6MTY4MzgzODIyN30.stKkTlMrpvBlN3vs8xT3jqbwJbiiffByGvsO7FFnu6RG-dWBNoNfokvxuBiMTnDX",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
 							"type": "string"
 						}
 					]
@@ -921,7 +1100,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n {\r\n        \"via\": \"Contrada Neri 06\",\r\n        \"civico\": 123,\r\n        \"localita\": \"Chieti\",\r\n        \"cap\": 55189\r\n    }\r\n",
+					"raw": "\r\n {\r\n        \"via\": \"Contrada Neri 06\",\r\n        \"civico\": 123,\r\n        \"localita\": \"Chieti\",\r\n        \"cap\": 55179\r\n    }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -944,6 +1123,16 @@
 		{
 			"name": "AssociaIndirizzoEsistenteAComuneEsistente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -956,7 +1145,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/indirizzi/associaComune/16/20",
+					"raw": "localhost:8080/indirizzi/associaComune/22/13",
 					"host": [
 						"localhost"
 					],
@@ -964,8 +1153,8 @@
 					"path": [
 						"indirizzi",
 						"associaComune",
-						"16",
-						"20"
+						"22",
+						"13"
 					]
 				}
 			},
@@ -974,11 +1163,21 @@
 		{
 			"name": "ModificaIndirizzo",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"via\": \"Via Lauro 5\",\r\n        \"civico\": 58,\r\n        \"localita\": \"Barbuda\",\r\n        \"cap\": 12363\r\n \r\n  }",
+					"raw": "  {\r\n        \"via\": \"Via Lauro 5\",\r\n        \"civico\": 58,\r\n        \"localita\": \"Barbuda\",\r\n        \"cap\": 123363\r\n \r\n  }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1003,6 +1202,16 @@
 		{
 			"name": "AssociaIndirizzoACliente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -1034,6 +1243,16 @@
 		{
 			"name": "EliminaIndirizzoSenzaCliente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"body": {
@@ -1046,14 +1265,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/indirizzi/14",
+					"raw": "localhost:8080/indirizzi/15",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"indirizzi",
-						"14"
+						"15"
 					]
 				}
 			},
@@ -1065,6 +1284,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1096,6 +1325,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1108,7 +1347,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/trovaPerId/1",
+					"raw": "localhost:8080/fatture/trovaPerId/4",
 					"host": [
 						"localhost"
 					],
@@ -1116,18 +1355,28 @@
 					"path": [
 						"fatture",
 						"trovaPerId",
-						"1"
+						"4"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "TrovaFatturaPerIdCliente(f)",
+			"name": "TrovaFatturaPerIdCliente",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1140,7 +1389,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/trovaPerCliente/4",
+					"raw": "localhost:8080/fatture/trovaPerCliente/3",
 					"host": [
 						"localhost"
 					],
@@ -1148,7 +1397,7 @@
 					"path": [
 						"fatture",
 						"trovaPerCliente",
-						"4"
+						"3"
 					]
 				}
 			},
@@ -1160,6 +1409,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1187,11 +1446,21 @@
 			"response": []
 		},
 		{
-			"name": "TrovaFatturaPerData(f)",
+			"name": "TrovaFatturaPerData",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1204,7 +1473,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/listaPerData/",
+					"raw": "localhost:8080/fatture/listaPerData/2022/01/12",
 					"host": [
 						"localhost"
 					],
@@ -1212,7 +1481,9 @@
 					"path": [
 						"fatture",
 						"listaPerData",
-						""
+						"2022",
+						"01",
+						"12"
 					]
 				}
 			},
@@ -1224,6 +1495,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1256,6 +1537,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjNAZXguY29tIiwiaWF0IjoxNjgzMjgzMjM4LCJleHAiOjE2ODM4ODgwMzh9.MZqMs9PLzvTCXvxengje2-v85vKVKPNmfDz40ffYYT4ljQPW1PL7W_mAdsOFTMa9",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1268,7 +1559,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/lista/importi/0/6",
+					"raw": "localhost:8080/fatture/lista/importi/0/9999",
 					"host": [
 						"localhost"
 					],
@@ -1278,7 +1569,7 @@
 						"lista",
 						"importi",
 						"0",
-						"6"
+						"9999"
 					]
 				}
 			},
@@ -1292,7 +1583,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
 							"type": "string"
 						}
 					]
@@ -1301,7 +1592,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 22,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 50.94,\r\n        \"numero\": 13,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1329,7 +1620,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
 							"type": "string"
 						}
 					]
@@ -1338,7 +1629,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 5.94,\r\n        \"numero\": 51,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
+					"raw": "{\r\n        \"anno\": 2022,\r\n        \"data\": \"3922-04-11T22:00:00.000+00:00\",\r\n        \"importo\": 333.94,\r\n        \"numero\": 51,\r\n        \"statoFattura\": \"EMESSA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1346,14 +1637,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/8",
+					"raw": "localhost:8080/fatture/1",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"fatture",
-						"8"
+						"1"
 					]
 				}
 			},
@@ -1367,7 +1658,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
 							"type": "string"
 						}
 					]
@@ -1384,7 +1675,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/fatture/elimina/9",
+					"raw": "localhost:8080/fatture/elimina/4",
 					"host": [
 						"localhost"
 					],
@@ -1392,7 +1683,7 @@
 					"path": [
 						"fatture",
 						"elimina",
-						"9"
+						"4"
 					]
 				}
 			},
@@ -1406,7 +1697,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
 							"type": "string"
 						}
 					]
@@ -1438,14 +1729,14 @@
 			"response": []
 		},
 		{
-			"name": "AssociaFatturaEsistenteAClienteEsistente",
+			"name": "AssociaClienteEsistenteAFatturaEsistente",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpb0BleGFtcGxlLmNvbSIsImlhdCI6MTY4MzI4MTM4NywiZXhwIjoxNjgzODg2MTg3fQ.2bYwDABKiCVCPOs-0Xm7kXHM5elhjEdomv0JblVtRn-JFYQPxgemotActpsheqhy",
 							"type": "string"
 						}
 					]
@@ -1462,7 +1753,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/clienti/associa/1/1",
+					"raw": "localhost:8080/clienti/associa/3/4",
 					"host": [
 						"localhost"
 					],
@@ -1470,8 +1761,8 @@
 					"path": [
 						"clienti",
 						"associa",
-						"1",
-						"1"
+						"3",
+						"4"
 					]
 				}
 			},
@@ -1483,6 +1774,9 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -1565,90 +1859,6 @@
 							"value": "ASC",
 							"disabled": true
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test Auth",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXBwby5nb29meS5waXBwb0BleC5jb20iLCJpYXQiOjE2ODIyNDUyMzcsImV4cCI6MTY4Mjg1MDAzN30.qA3z2qm9DgQdCvBVBSjrcOLjnSgz6VTLokGdOZMkw4AuTh0S4t_zGvi9JxKxYOr_",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/api/test/auth",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"test",
-						"auth"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "TestByRole",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXBwby5nb29meS5waXBwb0BleC5jb20iLCJpYXQiOjE2ODIyNDUyMzcsImV4cCI6MTY4Mjg1MDAzN30.qA3z2qm9DgQdCvBVBSjrcOLjnSgz6VTLokGdOZMkw4AuTh0S4t_zGvi9JxKxYOr_",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n \"username\": \"fistalloni\",\r\n    \"password\": \"qwerty\"\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/api/test/admin",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"test",
-						"admin"
 					]
 				}
 			},
