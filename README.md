@@ -1,6 +1,6 @@
 # BuildWeekGestioneFatture
 
-Nel seguente file sono presenti le spiegazioni dei vari metodi nella collection creata appositamente per il progetto
+Nel seguente file sono presenti le spiegazioni dei vari metodi della collection creata appositamente per il progetto
 su Postman:
 
 Successivamente vengono riportate le varie richieste che sono possibili effetuare in formato :
