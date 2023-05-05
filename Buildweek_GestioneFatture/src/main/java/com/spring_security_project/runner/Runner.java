@@ -86,7 +86,7 @@ public class Runner implements ApplicationRunner {
 		// METODI CLIENTE
 		//Cliente cl = cliente.getObject();
 //		System.out.println(cl);
-//		Cliente cl2 = new Cliente(1l,"MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, ind,ind2);
+		Cliente cl2 = new Cliente("MarioRossi_PA", "138539853", "mario@example.it", LocalDate.now(), LocalDate.now(), 9999, "pecdimario@aruba.sos", "091 44455559", "pecdimario@aruba.sos","prova", "prova2", "908302", TipoCliente.PA);
 		List<Fattura> lista = new ArrayList<>();		
 //		System.out.println(cl);
 	//clienteServ.addCliente(cl2);
@@ -96,8 +96,8 @@ public class Runner implements ApplicationRunner {
 		//fatturaServ.addFattura(f);
 		
 		lista.add(f);
-		Cliente clFatture = new Cliente("GV_SPA", "138539135", "g@example.it", LocalDate.now(), LocalDate.now(), 13242, "pecdig@aruba.sos", "091 44455349", "pecdg@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, indirizzoServ.findById(1l), indirizzoServ.findById(2l), lista);
-		clienteServ.addCliente(clFatture);
+	//	Cliente clFatture = new Cliente("GV_SPA", "138539135", "g@example.it", LocalDate.now(), LocalDate.now(), 13242, "pecdig@aruba.sos", "091 44455349", "pecdg@aruba.sos","prova", "prova2", "908302", TipoCliente.PA, indirizzoServ.findById(1l), indirizzoServ.findById(2l), lista);
+		//clienteServ.addCliente(clFatture);
 		//f.setCliente(cl2);
 		//fatturaServ.addFattura(f);
 //		cl2.getListaFatture().add(f);
